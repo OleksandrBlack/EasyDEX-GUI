@@ -1,6 +1,6 @@
 {
   "name": "SafewalletGUI",
-  "version": "0.0.26",
+  "version": "0.2.31",
   "description": "Safewallet Wallet GUI",
   "main": "src/index.js",
   "scripts": {
@@ -17,8 +17,8 @@
     "e2e": "protractor",
     "e2e-live": "protractor --elementExplorer"
   },
-  "repository": "https://github.com/OleksandrBlack/FairExchange-GUI",
-  "homepage": "",
+  "repository": "https://github.com/SafecoinPlatform/FairExchange-GUI",
+  "homepage": "http://ipv6admin.com",
   "keywords": [
     "safewallet",
     "FairExchange",
