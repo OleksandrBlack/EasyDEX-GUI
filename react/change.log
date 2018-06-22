@@ -5,12 +5,12 @@ wif login
 v0.2.0.22-23a-beta
 --------------
 - fixed activating best chain progress update
-- prevent running two agama instances
+- prevent running two safewallet instances
 - cli passphru fix
 - fixed logout bug
 - minor placeholders fixes
 - hide address dropdown if wallet has only one address
-- komodod crash report modal
+- safecoind crash report modal
 - values clipping
 - add coin multi ui reflow fix
 - reset app setting to default
@@ -26,15 +26,15 @@ v0.2.0.22-23a-beta
 - claim interest modal
 - claim interest button on dashboard
 - renewed transactions history look
-- prevent app from closing while komodod is still loading/processing data
+- prevent app from closing while safecoind is still loading/processing data
 - send form validation
 - coin daemon port check on addcoin
 - updated application settings
-- komodo datadir
+- safecoin datadir
 - windows bins path fix
 - slow windows sync workaround
 - transactions details sorting fix
-- configurable komodod graceful quit timeout param
+- configurable safecoind graceful quit timeout param
 - zcash params fetch modal
 - mnz asset chain
 - deprecated full and basilisk modes
