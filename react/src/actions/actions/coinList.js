@@ -5,7 +5,7 @@ import { translate } from '../../translate/translate';
 
 export function shepherdElectrumLock() {
   return new Promise((resolve, reject) => {
-    fetch(`http://127.0.0.1:${Config.agamaPort}/shepherd/electrum/lock`, {
+    fetch(`http://127.0.0.1:${Config.safewalletPort}/shepherd/electrum/lock`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -29,7 +29,7 @@ export function shepherdElectrumLock() {
 
 export function shepherdElectrumLogout() {
   return new Promise((resolve, reject) => {
-    fetch(`http://127.0.0.1:${Config.agamaPort}/shepherd/electrum/logout`, {
+    fetch(`http://127.0.0.1:${Config.safewalletPort}/shepherd/electrum/logout`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -53,12 +53,12 @@ export function shepherdElectrumLogout() {
 
 export function shepherdStopCoind(coin) {
   return new Promise((resolve, reject) => {
-    fetch(`http://127.0.0.1:${Config.agamaPort}/shepherd/coind/stop`, {
+    fetch(`http://127.0.0.1:${Config.safewalletPort}/shepherd/coind/stop`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: coin === 'KMD' ? JSON.stringify({ token: Config.token }) : JSON.stringify({ chain: coin, token: Config.token }),
+      body: coin === 'SAFE' ? JSON.stringify({ token: Config.token }) : JSON.stringify({ chain: coin, token: Config.token }),
     })
     .catch((error) => {
       console.log(error);
@@ -77,12 +77,12 @@ export function shepherdStopCoind(coin) {
 
 export function shepherdRemoveCoin(coin, mode) {
   return new Promise((resolve, reject, dispatch) => {
-    fetch(`http://127.0.0.1:${Config.agamaPort}/shepherd/coins/remove`, {
+    fetch(`http://127.0.0.1:${Config.safewalletPort}/shepherd/coins/remove`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(coin === 'KMD' && mode === 'native' ? {
+      body: JSON.stringify(coin === 'SAFE' && mode === 'native' ? {
         mode,
         token: Config.token,
       } : {
@@ -119,7 +119,7 @@ export function shepherdRemoveCoin(coin, mode) {
 
 export function shepherdGetCoinList() {
   return new Promise((resolve, reject) => {
-    fetch(`http://127.0.0.1:${Config.agamaPort}/shepherd/coinslist?token=${Config.token}`, {
+    fetch(`http://127.0.0.1:${Config.safewalletPort}/shepherd/coinslist?token=${Config.token}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -142,7 +142,7 @@ export function shepherdGetCoinList() {
 
 export function shepherdPostCoinList(data) {
   return new Promise((resolve, reject) => {
-    fetch(`http://127.0.0.1:${Config.agamaPort}/shepherd/coinslist`, {
+    fetch(`http://127.0.0.1:${Config.safewalletPort}/shepherd/coinslist`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -169,7 +169,7 @@ export function shepherdPostCoinList(data) {
 
 export function shepherdClearCoindFolder(coin, keepWalletDat) {
   return new Promise((resolve, reject) => {
-    fetch(keepWalletDat ? `http://127.0.0.1:${Config.agamaPort}/shepherd/kick?coin=${coin}&keepwallet=true&token=${Config.token}` : `http://127.0.0.1:${Config.agamaPort}/shepherd/kick?coin=${coin}&token=${Config.token}`, {
+    fetch(keepWalletDat ? `http://127.0.0.1:${Config.safewalletPort}/shepherd/kick?coin=${coin}&keepwallet=true&token=${Config.token}` : `http://127.0.0.1:${Config.safewalletPort}/shepherd/kick?coin=${coin}&token=${Config.token}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',

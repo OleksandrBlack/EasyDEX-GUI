@@ -34,7 +34,7 @@ import getRandomElectrumServer from '../../../util/serverRandom';
 /*import { SocketProvider } from 'socket.io-react';
 import io from 'socket.io-client';
 
-const socket = io.connect(`http://127.0.0.1:${Config.agamaPort}`);*/
+const socket = io.connect(`http://127.0.0.1:${Config.safewalletPort}`);*/
 
 const BOTTOM_BAR_DISPLAY_THRESHOLD = 15;
 
@@ -95,7 +95,7 @@ class WalletsData extends React.Component {
 
   displayClaimInterestUI() {
     if (this.props.ActiveCoin &&
-        this.props.ActiveCoin.coin === 'KMD' &&
+        this.props.ActiveCoin.coin === 'SAFE' &&
         this.props.ActiveCoin.balance) {
       if (this.props.ActiveCoin.balance.interest &&
         this.props.ActiveCoin.balance.interest > 0) {
@@ -249,7 +249,7 @@ class WalletsData extends React.Component {
   handleClickOutside(e) {
     if (e.srcElement.className !== 'btn dropdown-toggle btn-info' &&
         (e.srcElement.offsetParent && e.srcElement.offsetParent.className !== 'btn dropdown-toggle btn-info') &&
-        (e.path && e.path[4] && e.path[4].className.indexOf('showkmdwalletaddrs') === -1) &&
+        (e.path && e.path[4] && e.path[4].className.indexOf('showsafewalletaddrs') === -1) &&
         (e.srcElement.offsetParent && e.srcElement.offsetParent.className.indexOf('dropdown') === -1) &&
         e.srcElement.className !== 'dropdown-toggle btn-xs btn-default') {
       this.setState({

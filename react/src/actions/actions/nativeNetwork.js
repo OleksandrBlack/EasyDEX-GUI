@@ -25,7 +25,7 @@ export function getNativePeers(coin) {
     };
 
     fetch(
-      `http://127.0.0.1:${Config.agamaPort}/shepherd/cli`,
+      `http://127.0.0.1:${Config.safewalletPort}/shepherd/cli`,
       _fetchConfig
     )
     .catch((error) => {
@@ -65,7 +65,7 @@ export function getNativeNettotals(coin) {
     };
 
     fetch(
-      `http://127.0.0.1:${Config.agamaPort}/shepherd/cli`,
+      `http://127.0.0.1:${Config.safewalletPort}/shepherd/cli`,
       _fetchConfig
     )
     .catch((error) => {

@@ -16,7 +16,7 @@ export function shepherdCliPromise(mode, chain, cmd, params) {
   }
 
   return new Promise((resolve, reject) => {
-    fetch(`http://127.0.0.1:${Config.agamaPort}/shepherd/cli`, {
+    fetch(`http://127.0.0.1:${Config.safewalletPort}/shepherd/cli`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -47,7 +47,7 @@ export function shepherdCli(mode, chain, cmd) {
   };
 
   return dispatch => {
-    return fetch(`http://127.0.0.1:${Config.agamaPort}/shepherd/cli`, {
+    return fetch(`http://127.0.0.1:${Config.safewalletPort}/shepherd/cli`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

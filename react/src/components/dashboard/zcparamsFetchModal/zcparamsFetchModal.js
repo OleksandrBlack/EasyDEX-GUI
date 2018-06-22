@@ -14,7 +14,7 @@ import ZcparamsFetchModalRender from './zcparamsFetchModal.render';
 import { SocketProvider } from 'socket.io-react';
 import io from 'socket.io-client';
 
-const socket = io.connect(`http://127.0.0.1:${Config.agamaPort}`);
+const socket = io.connect(`http://127.0.0.1:${Config.safewalletPort}`);
 
 let updateProgressBar = {
   zcparams: {
@@ -30,7 +30,7 @@ class ZcparamsFetchModal extends React.Component {
       display: true,
       updateLog: [],
       zcparamsSources: {},
-      dlOption: 'agama.komodoplatform.com',
+      dlOption: 'safewallet.safecoin.com', //TODO
       done: false,
     };
     this.dismiss = this.dismiss.bind(this);

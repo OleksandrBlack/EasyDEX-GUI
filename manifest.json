@@ -1,7 +1,7 @@
 {
-  "name": "EasyDEX App",
-  "short_name": "EasyDEX",
-  "description": "EasyDEX - Decentralized Crypto Currency Exchange App",
+  "name": "FairExchange App",
+  "short_name": "FairExchange",
+  "description": "FairExchange - Decentralized Crypto Currency Exchange App",
   "version": "0.0.2",
   "manifest_version": 2,
   "icons": {

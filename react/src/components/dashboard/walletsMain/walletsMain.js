@@ -14,7 +14,7 @@ import mainWindow from '../../../util/mainWindow';
 import { SocketProvider } from 'socket.io-react';
 import io from 'socket.io-client';
 
-const socket = io.connect(`http://127.0.0.1:${Config.agamaPort}`);
+const socket = io.connect(`http://127.0.0.1:${Config.safewalletPort}`);
 const PRICES_UPDATE_INTERVAL = 120000; // every 2m
 
 class WalletsMain extends React.Component {
@@ -43,7 +43,7 @@ class WalletsMain extends React.Component {
         !mainWindow.createSeed.secondaryLoginPH) {
       Store.dispatch(
         triggerToaster(
-          'Please write down your public address, logout and login into Agama again to verify that your seed is correct.',
+          'Please write down your public address, logout and login into Safewallet again to verify that your seed is correct.',
           'First time seed use',
           'info',
           false
@@ -84,13 +84,13 @@ class WalletsMain extends React.Component {
 
   updateSocketsData(data) {
     if (data &&
-        data.komodod &&
-        data.komodod.error) {
-      switch (data.komodod.error) {
+        data.safecoind &&
+        data.safecoind.error) {
+      switch (data.safecoind.error) {
         case 'run -reindex':
           Store.dispatch(
             triggerToaster(
-              translate('TOASTR.RESTART_AGAMA_WITH_REINDEX_PARAM'),
+              translate('TOASTR.RESTART_SAFEWALLET_WITH_REINDEX_PARAM'),
               translate('TOASTR.WALLET_NOTIFICATION'),
               'info',
               false

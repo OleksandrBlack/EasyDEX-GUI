@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { translate } from '../../../translate/translate';
 import {
   dashboardChangeActiveCoin,
-  getKMDAddressesNative,
+  getSAFEAddressesNative,
   startInterval,
   stopInterval,
   triggerToaster,
@@ -22,7 +22,7 @@ import {
 } from './jumblr.render';
 import { PassPhraseGenerator } from '../../../util/crypto/passphrasegenerator';
 
-// import gen komodo keys utils
+// import gen safecoin keys utils
 import '../../../util/crypto/gen/array.map.js';
 import '../../../util/crypto/gen/cryptojs.js';
 import '../../../util/crypto/gen/cryptojs.sha256.js';
@@ -127,21 +127,21 @@ class Jumblr extends React.Component {
   generateKeys(passphrase) {
     if (!passphrase) {
       const key = new Bitcoin.ECKey(false).setCompressed(true);
-      const kmdAddress = key.getBitcoinAddress();
+      const safeAddress = key.getBitcoinAddress();
       const wifAddress = key.getBitcoinWalletImportFormat();
 
       return {
-        address: kmdAddress,
+        address: safeAddress,
         wif: wifAddress,
       };
     } else {
       const bytes = Crypto.SHA256(passphrase, { asBytes: true });
       const btcKey = new Bitcoin.ECKey(bytes).setCompressed(true);
-      const kmdAddress = btcKey.getBitcoinAddress();
+      const safeAddress = btcKey.getBitcoinAddress();
       const wifAddress = btcKey.getBitcoinWalletImportFormat();
 
       return {
-        address: kmdAddress,
+        address: safeAddress,
         wif: wifAddress,
       };
     }

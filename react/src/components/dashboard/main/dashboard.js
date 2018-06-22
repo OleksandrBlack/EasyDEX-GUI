@@ -28,7 +28,7 @@ class Dashboard extends React.Component {
         Store.dispatch(
           triggerToaster(
             _errors,
-            'Komodo',
+            'Safecoin',
             'error',
             false
           )

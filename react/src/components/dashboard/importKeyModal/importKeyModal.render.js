@@ -35,7 +35,7 @@ export const ImportKeyModalRender = function() {
                 <strong>{ translate('IMPORT_KEY.PASSPHRASE') }</strong>
                 <p className="margin-top-10">
                   <strong>{ translate('IMPORT_KEY.NOTICE') }:</strong> { translate('IMPORT_KEY.NOTICE_DESC') }.&nbsp;
-                  <span className={ this.props.ActiveCoin.coin === 'KMD' ? '' : 'hide' }>{ translate('IMPORT_KEY.KMD_RESCAN_WARNING_TIME') }.</span>
+                  <span className={ this.props.ActiveCoin.coin === 'SAFE' ? '' : 'hide' }>{ translate('IMPORT_KEY.SAFE_RESCAN_WARNING_TIME') }.</span>
                 </p>
                 <div
                   className="wifkeys-form"

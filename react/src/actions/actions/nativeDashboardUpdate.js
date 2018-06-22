@@ -17,7 +17,7 @@ export function getDashboardUpdate(coin, activeCoinProps) {
     };
 
     return fetch(
-      `http://127.0.0.1:${Config.agamaPort}/shepherd/native/dashboard/update`,
+      `http://127.0.0.1:${Config.safewalletPort}/shepherd/native/dashboard/update`,
       _fetchConfig
     )
     .catch((error) => {

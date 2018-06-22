@@ -18,7 +18,7 @@ class DexCoins extends React.Component {
     super();
     this.state = {
       balance: {
-        kmd: 0,
+        safe: 0,
         btc: 0,
       },
       coinLoading: false,
@@ -84,17 +84,17 @@ class DexCoins extends React.Component {
       const coins = this.props.Dex.coins;
       const prices = this.state.prices;
       const rates = this.props.Dex.rates;
-      let _totalKMDValue = 0;
+      let _totalSAFEValue = 0;
 
       for (let i = 0; i < coins.length; i++) {
         // console.log(coins[i].coin + ' ' + coins[i].balance);
         if (Number(coins[i].balance) > 0) {
-          console.warn(coins[i].balance, `${coins[i].coin}/KMD ${prices[`${coins[i].coin}/KMD`]}`);
+          console.warn(coins[i].balance, `${coins[i].coin}/SAFE ${prices[`${coins[i].coin}/SAFE`]}`);
 
-          if (coins[i].coin === 'KMD') {
-            _totalKMDValue += Number(coins[i].balance);
+          if (coins[i].coin === 'SAFE') {
+            _totalSAFEValue += Number(coins[i].balance);
           } else {
-            _totalKMDValue += Number(coins[i].balance) * prices[`${coins[i].coin}/KMD`];
+            _totalSAFEValue += Number(coins[i].balance) * prices[`${coins[i].coin}/SAFE`];
           }
         }
       }
@@ -102,9 +102,9 @@ class DexCoins extends React.Component {
       return (
         <h1 style={{ color: '#9e9e9e' }}>
           <label>Estimated balance</label>
-          <span>{ (_totalKMDValue * rates.BTC).toFixed(8) } BTC</span>
-          <span>{ (_totalKMDValue).toFixed(8) } KMD</span>
-          <small className="margin-top-10 margin-bottom-25">${ (_totalKMDValue * rates.USD).toFixed(8) }</small>
+          <span>{ (_totalSAFEValue * rates.BTC).toFixed(8) } BTC</span>
+          <span>{ (_totalSAFEValue).toFixed(8) } SAFE</span>
+          <small className="margin-top-10 margin-bottom-25">${ (_totalSAFEValue * rates.USD).toFixed(8) }</small>
         </h1>
       );
     } else {
@@ -114,7 +114,7 @@ class DexCoins extends React.Component {
 
   calcTotalBalance(rates, coins, prices) {
     let _coins = {};
-    let _totalKMDValue = 0;
+    let _totalSAFEValue = 0;
 
     if (rates &&
         rates.BTC &&
@@ -123,10 +123,10 @@ class DexCoins extends React.Component {
         console.log(coins[i].coin + ' ' + coins[i].balance);
         _coins[coins[i].coin] = coins[i];
         if (Number(coins[i].balance) > 0) {
-          _totalKMDValue += Number(coins[i].KMDvalue);
+          _totalSAFEValue += Number(coins[i].SAFEvalue);
         }
       }
-      console.log(_totalKMDValue);
+      console.log(_totalSAFEValue);
     }
   }
 
@@ -236,14 +236,14 @@ class DexCoins extends React.Component {
     let _prices = this.state.prices;
     let _items = [];
 
-    _prices['KMD/USD'] = this.props.Dex.rates.USD;
-    _prices['BTC/USD'] = this.props.Dex.rates.USD * _prices['BTC/KMD'];
+    _prices['SAFE/USD'] = this.props.Dex.rates.USD;
+    _prices['BTC/USD'] = this.props.Dex.rates.USD * _prices['BTC/SAFE'];
 
     for (let i = 0; i < 2; i++) {
       for (let key in _prices) {
         const _pair = key.split('/');
 
-        if ((i === 1 && key !== 'KMD/USD' && key !== 'BTC/USD') || (i === 0 && (key === 'KMD/USD' || key === 'BTC/USD'))) {
+        if ((i === 1 && key !== 'SAFE/USD' && key !== 'BTC/USD') || (i === 0 && (key === 'SAFE/USD' || key === 'BTC/USD'))) {
           _items.push(
             <li
               key={ `prices-${key}` }

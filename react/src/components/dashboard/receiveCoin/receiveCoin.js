@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import {
   copyCoinAddress,
-  getNewKMDAddresses,
+  getNewSAFEAddresses,
   dumpPrivKey,
   copyString,
   triggerToaster,
@@ -138,7 +138,7 @@ class ReceiveCoin extends React.Component {
   }
 
   getNewAddress(type) {
-    Store.dispatch(getNewKMDAddresses(this.props.coin, type, this.props.mode));
+    Store.dispatch(getNewSAFEAddresses(this.props.coin, type, this.props.mode));
   }
 
   toggleVisibleAddress() {

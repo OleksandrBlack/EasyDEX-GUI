@@ -223,7 +223,7 @@ class ClaimInterestModal extends React.Component {
   }
 
   claimInterest(address, amount) {
-    if (this.props.ActiveCoin.coin === 'KMD') {
+    if (this.props.ActiveCoin.coin === 'SAFE') {
       if (this.props.ActiveCoin.mode === 'spv') {
         this.setState(Object.assign({}, this.state, {
           spvVerificationWarning: false,
@@ -357,7 +357,7 @@ class ClaimInterestModal extends React.Component {
     }
 
     return (
-      <div className={ `btn-group bootstrap-select form-control form-material showkmdwalletaddrs show-tick ${(this.state.addressSelectorOpen ? 'open' : '')}` }>
+      <div className={ `btn-group bootstrap-select form-control form-material showsafewalletaddrs show-tick ${(this.state.addressSelectorOpen ? 'open' : '')}` }>
         <button
           type="button"
           className={ 'btn dropdown-toggle btn-info' + (this.props.ActiveCoin.mode === 'spv' ? ' disabled' : '') }
@@ -407,7 +407,7 @@ class ClaimInterestModal extends React.Component {
   render() {
     if (this.props.ActiveCoin &&
         this.props.ActiveCoin.coin &&
-        this.props.ActiveCoin.coin === 'KMD') {
+        this.props.ActiveCoin.coin === 'SAFE') {
       return ClaimInterestModalRender.call(this);
     } else {
       return null;

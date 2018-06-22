@@ -7,7 +7,7 @@ import ReactTooltip from 'react-tooltip';
 
 export const AddressListRender = function() {
   return (
-    <div className={ `btn-group bootstrap-select form-control form-material showkmdwalletaddrs show-tick ${(this.state.addressSelectorOpen ? 'open' : '')}` }>
+    <div className={ `btn-group bootstrap-select form-control form-material showsafewalletaddrs show-tick ${(this.state.addressSelectorOpen ? 'open' : '')}` }>
       <button
         type="button"
         className={ 'btn dropdown-toggle btn-info' + (this.props.ActiveCoin.mode === 'spv' ? ' disabled' : '') }
@@ -64,14 +64,14 @@ export const _SendFormRender = function() {
           }
           <label
             className="control-label"
-            htmlFor="kmdWalletSendTo">{ translate('INDEX.SEND_TO') }</label>
+            htmlFor="safeWalletSendTo">{ translate('INDEX.SEND_TO') }</label>
           <input
             type="text"
             className="form-control"
             name="sendTo"
             onChange={ this.updateInput }
             value={ this.state.sendTo }
-            id="kmdWalletSendTo"
+            id="safeWalletSendTo"
             placeholder={ this.props.ActiveCoin.mode === 'spv' ? translate('SEND.ENTER_ADDRESS') : translate('SEND.ENTER_T_OR_Z_ADDR') }
             autoComplete="off"
             required />
@@ -87,7 +87,7 @@ export const _SendFormRender = function() {
           }
           <label
             className="control-label"
-            htmlFor="kmdWalletAmount">
+            htmlFor="safeWalletAmount">
             { translate('INDEX.AMOUNT') }
           </label>
           <input
@@ -96,7 +96,7 @@ export const _SendFormRender = function() {
             name="amount"
             value={ this.state.amount !== 0 ? this.state.amount : '' }
             onChange={ this.updateInput }
-            id="kmdWalletAmount"
+            id="safeWalletAmount"
             placeholder="0.000"
             autoComplete="off" />
         </div>
@@ -123,7 +123,7 @@ export const _SendFormRender = function() {
         <div className="col-lg-6 form-group form-material hide">
           <label
             className="control-label"
-            htmlFor="kmdWalletFee">
+            htmlFor="safeWalletFee">
             { translate('INDEX.FEE') }
           </label>
           <input
@@ -131,7 +131,7 @@ export const _SendFormRender = function() {
             className="form-control"
             name="fee"
             onChange={ this.updateInput }
-            id="kmdWalletFee"
+            id="safeWalletFee"
             placeholder="0.000"
             value={ this.state.fee !== 0 ? this.state.fee : '' }
             autoComplete="off" />
@@ -270,7 +270,7 @@ export const SendRender = function() {
                   }
                   { this.state.spvPreflightRes.estimatedFee < 0 &&
                     <div className="col-lg-12 col-sm-12 col-xs-12 padding-bottom-20">
-                      <strong>KMD interest</strong>&nbsp;
+                      <strong>SAFE interest</strong>&nbsp;
                       { Math.abs(formatValue(this.state.spvPreflightRes.estimatedFee * 0.00000001)) } to { this.props.Dashboard.electrumCoins[this.props.ActiveCoin.coin].pub }
                     </div>
                   }

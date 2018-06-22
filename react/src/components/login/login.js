@@ -515,18 +515,18 @@ class Login extends React.Component {
             Store.dispatch(
               triggerToaster(
                 _errors,
-                'Komodod',
+                'Safecoind',
                 'error',
                 false
               )
             );
             Store.dispatch(toggleZcparamsFetchModal(true));
           } else {
-            mainWindow.startKMDNative(e.value.toUpperCase());
+            mainWindow.startSAFENative(e.value.toUpperCase());
           }
         });
       } else {
-        mainWindow.startKMDNative(e.value.toUpperCase());
+        mainWindow.startSAFENative(e.value.toUpperCase());
       }
     } else {
       mainWindow.startSPV(e.value.toUpperCase());

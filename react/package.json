@@ -1,10 +1,10 @@
 {
-  "name": "AgamaGUI",
+  "name": "SafewalletGUI",
   "version": "0.0.26",
-  "description": "Agama Wallet GUI",
+  "description": "Safewallet Wallet GUI",
   "main": "src/index.js",
   "scripts": {
-    "start": "webpack-dashboard -t 'AgamaGUI' -- webpack-dev-server --colors --no-info",
+    "start": "webpack-dashboard -t 'SafewalletGUI' -- webpack-dev-server --colors --no-info",
     "build": "rm -rf ./build && mkdir build && mkdir build/assets && cp -R src/assets build/ && NODE_ENV=\"production\" webpack",
     "build_win": "rmdir /s /q build && mkdir build && mkdir build/assets && xcopy src/assets build/ /s /e && NODE_ENV=\"production\" webpack",
     "build-only": "./node_modules/.bin/webpack --config ./webpack.prod.config.js",
@@ -17,17 +17,17 @@
     "e2e": "protractor",
     "e2e-live": "protractor --elementExplorer"
   },
-  "repository": "https://github.com/KomodoPlatform/EasyDEX-GUI",
-  "homepage": "http://supernet.org",
+  "repository": "https://github.com/OleksandrBlack/FairExchange-GUI",
+  "homepage": "",
   "keywords": [
-    "agama",
-    "SuperNET",
-    "komodo",
+    "safewallet",
+    "FairExchange",
+    "safecoin",
     "multicoin",
     "wallet",
     "spv"
   ],
-  "author": "SuperNET Team",
+  "author": "FairExchange Team",
   "license": "MIT",
   "dependencies": {
     "babel-core": "^6.14.0",

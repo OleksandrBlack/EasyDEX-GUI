@@ -5,7 +5,7 @@ const CoindDownModalRender = function() {
   let _debuglog = this.props.debugLog || '';
 
   if (_debuglog.indexOf('ENOENT') > -1) {
-    _debuglog = 'Error: ' + (this.props.ActiveCoin.coin === 'KMD' ? 'Komodod' : `Komodod / ${this.props.ActiveCoin.coin}`) + translate('INDEX.COIND_DOWN_MODAL_ERROR');
+    _debuglog = 'Error: ' + (this.props.ActiveCoin.coin === 'SAFE' ? 'Safecoind' : `Safecoind / ${this.props.ActiveCoin.coin}`) + translate('INDEX.COIND_DOWN_MODAL_ERROR');
   }
 
   return (
@@ -29,7 +29,7 @@ const CoindDownModalRender = function() {
                 <span>×</span>
               </button>
               <h4 className="modal-title white">
-                { this.props.ActiveCoin.coin === 'KMD' ? 'Komodod' : `Komodod / ${this.props.ActiveCoin.coin}` }&nbsp;
+                { this.props.ActiveCoin.coin === 'SAFE' ? 'Safecoind' : `Safecoind / ${this.props.ActiveCoin.coin}` }&nbsp;
                 { translate('INDEX.IS_DOWN') }!
               </h4>
             </div>
@@ -59,7 +59,7 @@ const CoindDownModalRender = function() {
                     <strong>Debug.log ({ translate('INDEX.LAST_50_LINES') })</strong>
                   }
                   { this.state.toggleDebugLog &&
-                    <strong>{ this.props.ActiveCoin.coin === 'KMD' ? 'Komodod' : `Komodod / ${this.props.ActiveCoin.coin} stdout` }</strong>
+                    <strong>{ this.props.ActiveCoin.coin === 'SAFE' ? 'Safecoind' : `Safecoind / ${this.props.ActiveCoin.coin} stdout` }</strong>
                   }
                   <div className="form-group form-material floating">
                     <textarea

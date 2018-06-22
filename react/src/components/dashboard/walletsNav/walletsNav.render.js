@@ -21,7 +21,7 @@ export const WalletsNavWithWalletRender = function() {
   return (
     <div>
       <div
-        className={ 'page-header page-header-bordered header-easydex padding-bottom-40 ' + (this.props.ActiveCoin.mode === 'spv' ? 'page-header--spv' : 'page-header--native') }
+        className={ 'page-header page-header-bordered header-fairexchange padding-bottom-40 ' + (this.props.ActiveCoin.mode === 'spv' ? 'page-header--spv' : 'page-header--native') }
         id="header-dashboard"
         style={{ marginBottom: '30px' }}>
         { this.props.ActiveCoin &&
@@ -40,7 +40,7 @@ export const WalletsNavWithWalletRender = function() {
           </div>
         }
         <div className="page-header-actions">
-          <div id="kmd_header_button">
+          <div id="safe_header_button">
             <button
               type="button"
               className="btn btn-info waves-effect waves-light"

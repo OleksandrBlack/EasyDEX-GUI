@@ -7,11 +7,11 @@ import {
   startInterval,
   stopInterval,
   iguanaEdexBalance,
-  getKMDAddressesNative,
+  getSAFEAddressesNative,
   changeActiveAddress,
-  getKMDOPID,
+  getSAFEOPID,
   getNativeTxHistory,
-  getKMDBalanceTotal,
+  getSAFEBalanceTotal,
   getSyncInfoNative,
   getDebugLog,
   getDashboardUpdate,
@@ -161,13 +161,13 @@ class CoinTileItem extends React.Component {
           _coinMode[coin] = mode;
         });
 
-        if (_coinMode.KMD &&
-            _coinMode.KMD === 'native' &&
-            skipCoin !== 'KMD') {
-          _coin = 'KMD';
+        if (_coinMode.SAFE &&
+            _coinMode.SAFE === 'native' &&
+            skipCoin !== 'SAFE') {
+          _coin = 'SAFE';
           _mode = 'native';
-        } else if (_coinMode.KMD && _coinMode.KMD === 'spv' && skipCoin !== 'KMD') {
-          _coin = 'KMD';
+        } else if (_coinMode.SAFE && _coinMode.SAFE === 'spv' && skipCoin !== 'SAFE') {
+          _coin = 'SAFE';
           _mode = 'spv';
         }
       });
@@ -245,10 +245,10 @@ class CoinTileItem extends React.Component {
         if ((syncPercentage < 100 &&
             (!this.props.Dashboard.displayCoindDownModal || this.props.ActiveCoin.getinfoFetchFailures < COIND_DOWN_MODAL_FETCH_FAILURES_THRESHOLD)) ||
             this.props.ActiveCoin.rescanInProgress) {
-          if (coin === 'KMD') {
-            Store.dispatch(getDebugLog('komodo', 50));
+          if (coin === 'SAFE') {
+            Store.dispatch(getDebugLog('safecoin', 50));
           } else {
-            Store.dispatch(getDebugLog('komodo', 50, coin));
+            Store.dispatch(getDebugLog('safecoin', 50, coin));
           }
         }
 

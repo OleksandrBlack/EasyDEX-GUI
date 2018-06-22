@@ -9,7 +9,7 @@ export const AddressActionsNonBasiliskModeRender = function(address, type) {
     <td>
       <span className={ 'label label-' + (type === 'public' ? 'default' : 'dark') }>
         <i className={ 'icon fa-eye' + (type === 'public' ? '' : '-slash') }></i>&nbsp;
-        { type === 'public' ? translate('IAPI.PUBLIC_SM') : translate('KMD_NATIVE.PRIVATE') }
+        { type === 'public' ? translate('IAPI.PUBLIC_SM') : translate('SAFE_NATIVE.PRIVATE') }
       </span>
       <button
         onClick={ () => this.toggleAddressMenu(address) }

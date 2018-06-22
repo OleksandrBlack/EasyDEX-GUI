@@ -15,7 +15,7 @@ export function encryptPassphrase(passphrase, key, pubKey) {
   };
 
   return dispatch => {
-    return fetch(`http://127.0.0.1:${Config.agamaPort}/shepherd/encryptkey`, {
+    return fetch(`http://127.0.0.1:${Config.safewalletPort}/shepherd/encryptkey`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -53,7 +53,7 @@ export function loginWithPin(key, pubKey) {
   };
 
   return dispatch => {
-    return fetch(`http://127.0.0.1:${Config.agamaPort}/shepherd/decryptkey`, {
+    return fetch(`http://127.0.0.1:${Config.safewalletPort}/shepherd/decryptkey`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -79,7 +79,7 @@ export function loginWithPin(key, pubKey) {
 
 export function loadPinList() {
   return dispatch => {
-    return fetch(`http://127.0.0.1:${Config.agamaPort}/shepherd/getpinlist?token=${Config.token}`, {
+    return fetch(`http://127.0.0.1:${Config.safewalletPort}/shepherd/getpinlist?token=${Config.token}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',

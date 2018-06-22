@@ -22,14 +22,14 @@ const NavbarRender = function() {
         <div className="navbar-brand navbar-brand-center site-gridmenu-toggle">
           <img
             className="navbar-brand-logo hidden-xs"
-            src="assets/images/agama-logo-side.svg"
+            src="assets/images/safewallet-logo-side.svg"
             height="100"
             width="100"
-            title={ translate('ABOUT.AGAMA_WALLET') } />
+            title={ translate('ABOUT.SAFEWALLET_WALLET') } />
           <img
             className="navbar-brand-logo hidden-md hidden-sm hidden-lg"
-            src="assets/images/agama-icon.svg"
-            title={ translate('ABOUT.AGAMA_WALLET') } />
+            src="assets/images/safewallet-icon.svg"
+            title={ translate('ABOUT.SAFEWALLET_WALLET') } />
           <span className="navbar-brand-text hidden-xs"></span>
         </div>
         <button
@@ -61,7 +61,7 @@ const NavbarRender = function() {
               </a>
             </li>
             { this.props.ActiveCoin &&
-              (/*this._checkAC() || */this.props.ActiveCoin.coin === 'KMD' &&
+              (/*this._checkAC() || */this.props.ActiveCoin.coin === 'SAFE' &&
                 this.props.ActiveCoin.mode === 'native') &&
               <li className={ this.isSectionActive('jumblr') ? 'active nav-top-menu' : 'nav-top-menu' }>
                 <a onClick={ () => this.dashboardChangeSection('jumblr') }>
@@ -139,7 +139,7 @@ const NavbarRender = function() {
                 { !this.isSectionActive('about') &&
                   <li>
                     <a onClick={ () => this.dashboardChangeSection('about') }>
-                      <i className="icon fa-users"></i> { translate('ABOUT.ABOUT_AGAMA') }
+                      <i className="icon fa-users"></i> { translate('ABOUT.ABOUT_SAFEWALLET') }
                     </a>
                   </li>
                 }

@@ -71,7 +71,7 @@ class ToolsOfflineSigCreate extends React.Component {
         let tx2qr = 'agtx:';
         res = res.result;
 
-        tx2qr += (res.network === 'komodo' ? 'KMD' : res.network) + ':' + res.outputAddress + ':' + res.changeAddress + ':' + res.value + ':' + res.change + ':u:';
+        tx2qr += (res.network === 'safecoin' ? 'SAFE' : res.network) + ':' + res.outputAddress + ':' + res.changeAddress + ':' + res.value + ':' + res.change + ':u:';
 
         for (let i = 0; i < res.utxoSet.length; i++) {
           tx2qr += res.utxoSet[i].txid + ':' + res.utxoSet[i].value + ':' + res.utxoSet[i].vout + (i === res.utxoSet.length -1 ? '' : '-');
@@ -142,7 +142,7 @@ class ToolsOfflineSigCreate extends React.Component {
         <div className="col-xlg-12 form-group form-material no-padding-left padding-top-20 padding-bottom-70">
           <label
             className="control-label col-sm-1 no-padding-left"
-            htmlFor="kmdWalletSendTo">Coin</label>
+            htmlFor="safeWalletSendTo">Coin</label>
           <Select
             name="selectedCoin"
             className="col-sm-3"
@@ -155,14 +155,14 @@ class ToolsOfflineSigCreate extends React.Component {
         <div className="col-sm-12 form-group form-material no-padding-left">
           <label
             className="control-label col-sm-1 no-padding-left"
-            htmlFor="kmdWalletSendTo">{ translate('INDEX.SEND_FROM') }</label>
+            htmlFor="safeWalletSendTo">{ translate('INDEX.SEND_FROM') }</label>
           <input
             type="text"
             className="form-control col-sm-3"
             name="sendFrom"
             onChange={ this.updateInput }
             value={ this.state.sendFrom }
-            id="kmdWalletSendTo"
+            id="safeWalletSendTo"
             placeholder={ translate('SEND.ENTER_ADDRESS') }
             autoComplete="off"
             required />
@@ -181,14 +181,14 @@ class ToolsOfflineSigCreate extends React.Component {
         <div className="col-sm-12 form-group form-material no-padding-left">
           <label
             className="control-label col-sm-1 no-padding-left"
-            htmlFor="kmdWalletSendTo">{ translate('INDEX.SEND_TO') }</label>
+            htmlFor="safeWalletSendTo">{ translate('INDEX.SEND_TO') }</label>
           <input
             type="text"
             className="form-control col-sm-3"
             name="sendTo"
             onChange={ this.updateInput }
             value={ this.state.sendTo }
-            id="kmdWalletSendTo"
+            id="safeWalletSendTo"
             placeholder={ translate('SEND.ENTER_ADDRESS') }
             autoComplete="off"
             required />
@@ -196,7 +196,7 @@ class ToolsOfflineSigCreate extends React.Component {
         <div className="col-sm-12 form-group form-material no-padding-left">
           <label
             className="control-label col-sm-1 no-padding-left"
-            htmlFor="kmdWalletAmount">
+            htmlFor="safeWalletAmount">
             { translate('INDEX.AMOUNT') }
           </label>
           <input
@@ -205,7 +205,7 @@ class ToolsOfflineSigCreate extends React.Component {
             name="amount"
             value={ this.state.amount }
             onChange={ this.updateInput }
-            id="kmdWalletAmount"
+            id="safeWalletAmount"
             placeholder="0.000"
             autoComplete="off" />
         </div>

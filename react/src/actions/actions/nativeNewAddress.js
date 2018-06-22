@@ -5,7 +5,7 @@ import {
 } from '../actionCreators';
 import Config from '../../config';
 
-export function getNewKMDAddresses(coin, pubpriv, mode) {
+export function getNewSAFEAddresses(coin, pubpriv, mode) {
   return dispatch => {
     const payload = {
       mode: null,
@@ -24,14 +24,14 @@ export function getNewKMDAddresses(coin, pubpriv, mode) {
     };
 
     return fetch(
-      `http://127.0.0.1:${Config.agamaPort}/shepherd/cli`,
+      `http://127.0.0.1:${Config.safewalletPort}/shepherd/cli`,
       _fetchConfig
     )
     .catch((error) => {
       console.log(error);
       dispatch(
         triggerToaster(
-          'getNewKMDAddresses',
+          'getNewSAFEAddresses',
           'Error',
           'error'
         )
@@ -43,7 +43,7 @@ export function getNewKMDAddresses(coin, pubpriv, mode) {
       dispatch(
         triggerToaster(
           json.result ? json.result : json,
-          translate('KMD_NATIVE.NEW_ADDR_GENERATED'),
+          translate('SAFE_NATIVE.NEW_ADDR_GENERATED'),
           'info',
           false
         )
@@ -54,7 +54,7 @@ export function getNewKMDAddresses(coin, pubpriv, mode) {
       dispatch(
         triggerToaster(
           json.result ? json.result : json,
-          translate('KMD_NATIVE.NEW_ADDR_GENERATED'),
+          translate('SAFE_NATIVE.NEW_ADDR_GENERATED'),
           'info',
           false
         )

@@ -4,7 +4,7 @@ import Config from '../../config';
 
 function fiatRates(pricesJson) {
   return dispatch => {
-    return fetch(`https://atomicexplorer.com/api/rates/kmd`, {
+    return fetch(`https://atomicexplorer.com/api/rates/safe`, {
       method: 'GET',
     })
     .catch((error) => {

@@ -20,10 +20,10 @@ const LoginRender = function() {
           <div className="brand">
             <img
               className="brand-img"
-              src="assets/images/agama-login-logo.svg"
+              src="assets/images/safewallet-login-logo.svg"
               width="200"
               height="160"
-              alt="SuperNET Agama" />
+              alt="FairExchange Safewallet" />
           </div>
           <div className="login-settings-dropdown margin-bottom-30">
             <div>
@@ -43,7 +43,7 @@ const LoginRender = function() {
                 </li>
                 <li>
                   <a onClick={ () => this.toggleLoginSettingsDropdownSection('about') }>
-                    <i className="icon fa-users"></i> { translate('ABOUT.ABOUT_AGAMA') }
+                    <i className="icon fa-users"></i> { translate('ABOUT.ABOUT_SAFEWALLET') }
                   </a>
                 </li>
                 { mainWindow.nnVoteChain &&
@@ -259,7 +259,7 @@ const LoginRender = function() {
                   { translate('INDEX.NATIVE_MODE') }
                   <i
                     className="icon fa-question-circle login-help"
-                    data-tip="<strong>Be aware:</strong> <u>Native mode</u> requires to download the whole blockchain data to a local disk before you can start using it.<br/>This may take from <strong>several hours to a day</strong> depending on your connection and hardware.<br/>Please <u>try to keep Agama running</u> until the whole process is finished."
+                    data-tip="<strong>Be aware:</strong> <u>Native mode</u> requires to download the whole blockchain data to a local disk before you can start using it.<br/>This may take from <strong>several hours to a day</strong> depending on your connection and hardware.<br/>Please <u>try to keep Safewallet running</u> until the whole process is finished."
                     data-html={ true }></i>
                   <ReactTooltip
                     effect="solid"
@@ -272,12 +272,12 @@ const LoginRender = function() {
                   optionRenderer={ this.renderShortcutOption }
                   valueRenderer={ this.renderShortcutOption }
                   options={[
-                    { value: 'kmd', label: 'kmd' },
+                    { value: 'safe', label: 'safe' },
                     { value: 'mnz', label: 'mnz' },
                     { value: 'btch', label: 'btch' },
                     { value: 'revs', label: 'revs' },
                     { value: 'jumblr', label: 'jumblr' },
-                    { value: 'kmd+revs+jumblr', label: 'kmd+revs+jumblr' },
+                    { value: 'safe+revs+jumblr', label: 'safe+revs+jumblr' },
                   ]} />
               </div>
               <div className="addcoin-shortcut">
@@ -299,13 +299,13 @@ const LoginRender = function() {
                   optionRenderer={ this.renderShortcutOption }
                   valueRenderer={ this.renderShortcutOption }
                   options={[
-                    { value: 'kmd', label: 'kmd' },
+                    { value: 'safe', label: 'safe' },
                     { value: 'chips', label: 'chips' },
                     { value: 'btch', label: 'btch' },
                     { value: 'mnz', label: 'mnz' },
                     { value: 'revs', label: 'revs' },
                     { value: 'jumblr', label: 'jumblr' },
-                    { value: 'kmd+revs+jumblr', label: 'kmd+revs+jumblr' },
+                    { value: 'safe+revs+jumblr', label: 'safe+revs+jumblr' },
                   ]} />
               </div>
             </div>
@@ -433,7 +433,7 @@ const LoginRender = function() {
                     qrSize="256"
                     modalSize="md"
                     title="Seed QR recovery"
-                    fileName="agama-seed"
+                    fileName="safewallet-seed"
                     content={ this.state.randomSeed } />
                 </button>
               </div>

@@ -4,24 +4,24 @@ export function zcashParamsCheckErrors(zcashParamsExist) {
   let _errors;
 
   if (zcashParamsExist.errors) {
-    _errors = [translate('KMD_NATIVE.ZCASH_PARAMS_MISSING'), ''];
+    _errors = [translate('SAFE_NATIVE.ZCASH_PARAMS_MISSING'), ''];
 
     if (!zcashParamsExist.rootDir) {
-      _errors.push(translate('KMD_NATIVE.ZCASH_PARAMS_MISSING_ROOT_DIR'));
+      _errors.push(translate('SAFE_NATIVE.ZCASH_PARAMS_MISSING_ROOT_DIR'));
     }
     if (!zcashParamsExist.provingKey) {
-      _errors.push(translate('KMD_NATIVE.ZCASH_PARAMS_MISSING_PROVING_KEY'));
+      _errors.push(translate('SAFE_NATIVE.ZCASH_PARAMS_MISSING_PROVING_KEY'));
     }
     if (!zcashParamsExist.verifyingKey) {
-      _errors.push(translate('KMD_NATIVE.ZCASH_PARAMS_MISSING_VERIFYING_KEY'));
+      _errors.push(translate('SAFE_NATIVE.ZCASH_PARAMS_MISSING_VERIFYING_KEY'));
     }
     if (!zcashParamsExist.provingKeySize &&
         zcashParamsExist.provingKey) {
-      _errors.push(translate('KMD_NATIVE.ZCASH_PARAMS_MISSING_PROVING_KEY_SIZE'));
+      _errors.push(translate('SAFE_NATIVE.ZCASH_PARAMS_MISSING_PROVING_KEY_SIZE'));
     }
     if (!zcashParamsExist.verifyingKeySize &&
         zcashParamsExist.verifyingKey) {
-      _errors.push(translate('KMD_NATIVE.ZCASH_PARAMS_MISSING_VERIFYING_KEY_SIZE'));
+      _errors.push(translate('SAFE_NATIVE.ZCASH_PARAMS_MISSING_VERIFYING_KEY_SIZE'));
     }
   }
 

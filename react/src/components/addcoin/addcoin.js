@@ -68,7 +68,7 @@ class AddCoin extends React.Component {
               Store.dispatch(
                 triggerToaster(
                   _errors,
-                  'Komodod',
+                  'Safecoind',
                   'error',
                   false
                 )

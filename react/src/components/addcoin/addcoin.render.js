@@ -63,7 +63,7 @@ const AddCoinRender = function() {
                   </p>
                   <p>
                     <strong>{ translate('INDEX.NATIVE_MODE') }:</strong> { translate('INDEX.NATIVE_MODE_DESC1') }&nbsp;
-                    <strong>Komodo Daemon</strong> { translate('INDEX.NATIVE_MODE_DESC2') }.
+                    <strong>Safecoin Daemon</strong> { translate('INDEX.NATIVE_MODE_DESC2') }.
                   </p>
                   <div className="alert alert-icon alert-primary margin-top-20">
                     <i className="icon md-info-outline"></i>

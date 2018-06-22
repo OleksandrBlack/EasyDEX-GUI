@@ -43,7 +43,7 @@ class DebugLogPanel extends React.Component {
   readDebugLog() {
     let _target = this.state.debugTarget;
 
-    if (_target === 'Komodo') {
+    if (_target === 'Safecoin') {
       _target = null;
     }
 
@@ -53,7 +53,7 @@ class DebugLogPanel extends React.Component {
 
     Store.dispatch(
       getDebugLog(
-        'komodo',
+        'safecoin',
         this.state.debugLinesCount,
         _target
       )
@@ -134,8 +134,8 @@ class DebugLogPanel extends React.Component {
         value="none">{ translate('SETTINGS.PICK_A_COIN') }</option>
     );
     for (let i = 0; i < _nativeCoins.length; i++) {
-      if (_nativeCoins[i] === 'KMD') {
-        _nativeCoins[i] = 'Komodo';
+      if (_nativeCoins[i] === 'SAFE') {
+        _nativeCoins[i] = 'Safecoin';
       }
 
       _items.push(

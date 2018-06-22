@@ -34,7 +34,7 @@ class ToolsPubCheck extends React.Component {
         <div className="col-sm-12 form-group form-material no-padding-left padding-top-10 padding-bottom-20">
           <label
             className="control-label col-sm-1 no-padding-left"
-            htmlFor="kmdWalletSendTo">Pub address</label>
+            htmlFor="safeWalletSendTo">Pub address</label>
           <input
             type="text"
             className="form-control col-sm-3"

@@ -24,7 +24,7 @@ function iguanaActiveHandleState(json) {
 
 export function activeHandle() {
   return dispatch => {
-    return fetch(`http://127.0.0.1:${Config.agamaPort}/shepherd/auth/status?token=${Config.token}`, {
+    return fetch(`http://127.0.0.1:${Config.safewalletPort}/shepherd/auth/status?token=${Config.token}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -51,7 +51,7 @@ export function activeHandle() {
 
 export function shepherdElectrumAuth(seed) {
   return dispatch => {
-    return fetch(`http://127.0.0.1:${Config.agamaPort}/shepherd/electrum/login`, {
+    return fetch(`http://127.0.0.1:${Config.safewalletPort}/shepherd/electrum/login`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -92,7 +92,7 @@ export function shepherdElectrumAuth(seed) {
 
 export function shepherdElectrumAddCoin(coin) {
   return dispatch => {
-    return fetch(`http://127.0.0.1:${Config.agamaPort}/shepherd/electrum/coins/add?coin=${coin}&token=${Config.token}`, {
+    return fetch(`http://127.0.0.1:${Config.safewalletPort}/shepherd/electrum/coins/add?coin=${coin}&token=${Config.token}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -172,9 +172,9 @@ export function shepherdHerd(coin, mode, path, startupParams) {
     };
   }
 
-  if (coin === 'KMD') {
+  if (coin === 'SAFE') {
     herdData = {
-      'ac_name': 'komodod',
+      'ac_name': 'safecoind',
       'ac_options': [
         '-daemon=0',
         '-addnode=78.47.196.146',
@@ -191,7 +191,7 @@ export function shepherdHerd(coin, mode, path, startupParams) {
   }
 
   // TODO: switch statement
-  if (coin === 'KMD') {
+  if (coin === 'SAFE') {
     acData = startCrypto(
       path.result,
       coin,
@@ -219,10 +219,10 @@ export function shepherdHerd(coin, mode, path, startupParams) {
       _herd = 'chipsd';
       herdData = {};
     } else {
-      _herd = coin !== 'ZEC' ? 'komodod' : 'zcashd';
+      _herd = coin !== 'ZEC' ? 'safecoind' : 'zcashd';
     }
 
-    return fetch(`http://127.0.0.1:${Config.agamaPort}/shepherd/herd`, {
+    return fetch(`http://127.0.0.1:${Config.safewalletPort}/shepherd/herd`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -321,13 +321,13 @@ export function addCoinResult(coin, mode) {
 
 export function _shepherdGetConfig(coin, mode, startupParams) {
   return dispatch => {
-    return fetch(`http://127.0.0.1:${Config.agamaPort}/shepherd/getconf`, {
+    return fetch(`http://127.0.0.1:${Config.safewalletPort}/shepherd/getconf`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        chain: 'komodod',
+        chain: 'safecoind',
         token: Config.token,
       }),
     })
@@ -356,16 +356,16 @@ export function _shepherdGetConfig(coin, mode, startupParams) {
 }
 
 export function shepherdGetConfig(coin, mode, startupParams) {
-  if (coin === 'KMD' &&
+  if (coin === 'SAFE' &&
       mode === '-1') {
     return dispatch => {
-      return fetch(`http://127.0.0.1:${Config.agamaPort}/shepherd/getconf`, {
+      return fetch(`http://127.0.0.1:${Config.safewalletPort}/shepherd/getconf`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          chain: 'komodod',
+          chain: 'safecoind',
           token: Config.token,
         }),
       })
@@ -393,7 +393,7 @@ export function shepherdGetConfig(coin, mode, startupParams) {
     }
   } else {
     return dispatch => {
-      return fetch(`http://127.0.0.1:${Config.agamaPort}/shepherd/getconf`, {
+      return fetch(`http://127.0.0.1:${Config.safewalletPort}/shepherd/getconf`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

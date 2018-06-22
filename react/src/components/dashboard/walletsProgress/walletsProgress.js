@@ -33,7 +33,7 @@ class WalletsProgress extends React.Component {
     const _isWindows = mainWindow.isWindows;
 
     if (_isWindows) {
-      _mainWindow.getMaxconKMDConf()
+      _mainWindow.getMaxconSAFEConf()
       .then((res) => {
         if (!res ||
             Number(res) !== 1) {
@@ -54,7 +54,7 @@ class WalletsProgress extends React.Component {
   applyWindowsSyncWorkaround() {
     const _mainWindow = mainWindow;
 
-    _mainWindow.setMaxconKMDConf(1)
+    _mainWindow.setMaxconSAFEConf(1)
     .then((res) => {
       if (res) {
         this.setState({
@@ -110,7 +110,7 @@ class WalletsProgress extends React.Component {
         !this.isWinSyncPercBelowThreshold()) {
       const _mainWindow = mainWindow;
 
-      _mainWindow.setMaxconKMDConf()
+      _mainWindow.setMaxconSAFEConf()
       .then((res) => {
         if (res) {
           this.setState({
@@ -204,9 +204,9 @@ class WalletsProgress extends React.Component {
         }
       }
 
-      if (this.props.ActiveCoin.progress.remoteKMDNode &&
-          this.props.ActiveCoin.progress.remoteKMDNode.blocks) {
-        const longestHeight = this.props.ActiveCoin.progress.remoteKMDNode.blocks;
+      if (this.props.ActiveCoin.progress.remoteSAFENode &&
+          this.props.ActiveCoin.progress.remoteSAFENode.blocks) {
+        const longestHeight = this.props.ActiveCoin.progress.remoteSAFENode.blocks;
 
         return [
           currentBestChain,
@@ -302,16 +302,16 @@ class WalletsProgress extends React.Component {
         }
 
         // fallback to local data if remote node is inaccessible
-        if (this.props.ActiveCoin.progress.remoteKMDNode &&
-            !this.props.ActiveCoin.progress.remoteKMDNode.blocks) {
+        if (this.props.ActiveCoin.progress.remoteSAFENode &&
+            !this.props.ActiveCoin.progress.remoteSAFENode.blocks) {
           return (
             `: ${currentProgress}% (${ translate('INDEX.ACTIVATING_SM') })`
           );
         } else {
-          if (this.props.ActiveCoin.progress.remoteKMDNode &&
-              this.props.ActiveCoin.progress.remoteKMDNode.blocks) {
+          if (this.props.ActiveCoin.progress.remoteSAFENode &&
+              this.props.ActiveCoin.progress.remoteSAFENode.blocks) {
             return(
-              `: ${Math.floor(currentBestChain * 100 / this.props.ActiveCoin.progress.remoteKMDNode.blocks)}% (${ translate('INDEX.BLOCKS_SM') } ${currentBestChain} / ${this.props.ActiveCoin.progress.remoteKMDNode.blocks})`
+              `: ${Math.floor(currentBestChain * 100 / this.props.ActiveCoin.progress.remoteSAFENode.blocks)}% (${ translate('INDEX.BLOCKS_SM') } ${currentBestChain} / ${this.props.ActiveCoin.progress.remoteSAFENode.blocks})`
             );
           }
         }

@@ -39,7 +39,7 @@ export function shepherdGetRemoteBTCFees() {
 
 export function shepherdElectrumSetServer(coin, address, port) {
   return new Promise((resolve, reject) => {
-    fetch(`http://127.0.0.1:${Config.agamaPort}/shepherd/electrum/coins/server/set?address=${address}&port=${port}&coin=${coin}&token=${Config.token}`, {
+    fetch(`http://127.0.0.1:${Config.safewalletPort}/shepherd/electrum/coins/server/set?address=${address}&port=${port}&coin=${coin}&token=${Config.token}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -64,7 +64,7 @@ export function shepherdElectrumSetServer(coin, address, port) {
 
 export function shepherdElectrumCheckServerConnection(address, port) {
   return new Promise((resolve, reject) => {
-    fetch(`http://127.0.0.1:${Config.agamaPort}/shepherd/electrum/servers/test?address=${address}&port=${port}&token=${Config.token}`, {
+    fetch(`http://127.0.0.1:${Config.safewalletPort}/shepherd/electrum/servers/test?address=${address}&port=${port}&token=${Config.token}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -89,7 +89,7 @@ export function shepherdElectrumCheckServerConnection(address, port) {
 
 export function shepherdElectrumKeys(seed) {
   return new Promise((resolve, reject) => {
-    fetch(`http://127.0.0.1:${Config.agamaPort}/shepherd/electrum/keys`, {
+    fetch(`http://127.0.0.1:${Config.safewalletPort}/shepherd/electrum/keys`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -120,7 +120,7 @@ export function shepherdElectrumKeys(seed) {
 
 export function shepherdElectrumBalance(coin, address) {
   return dispatch => {
-    return fetch(`http://127.0.0.1:${Config.agamaPort}/shepherd/electrum/getbalance?coin=${coin}&address=${address}&token=${Config.token}`, {
+    return fetch(`http://127.0.0.1:${Config.safewalletPort}/shepherd/electrum/getbalance?coin=${coin}&address=${address}&token=${Config.token}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -152,7 +152,7 @@ export function shepherdElectrumBalanceState(json) {
 
 export function shepherdElectrumTransactions(coin, address) {
   return dispatch => {
-    return fetch(`http://127.0.0.1:${Config.agamaPort}/shepherd/electrum/listtransactions?coin=${coin}&address=${address}&full=true&maxlength=20&token=${Config.token}`, {
+    return fetch(`http://127.0.0.1:${Config.safewalletPort}/shepherd/electrum/listtransactions?coin=${coin}&address=${address}&full=true&maxlength=20&token=${Config.token}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -193,7 +193,7 @@ export function shepherdElectrumTransactionsState(json) {
 
 export function shepherdElectrumCoins() {
   return dispatch => {
-    return fetch(`http://127.0.0.1:${Config.agamaPort}/shepherd/electrum/coins?token=${Config.token}`, {
+    return fetch(`http://127.0.0.1:${Config.safewalletPort}/shepherd/electrum/coins?token=${Config.token}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -228,7 +228,7 @@ export function shepherdElectrumSend(coin, value, sendToAddress, changeAddress, 
   value = Math.floor(value);
 
   return dispatch => {
-    return fetch(`http://127.0.0.1:${Config.agamaPort}/shepherd/electrum/createrawtx?coin=${coin}&address=${sendToAddress}&value=${value}&change=${changeAddress}${btcFee ? '&btcfee=' + btcFee : ''}&gui=true&push=true&verify=true&token=${Config.token}`, {
+    return fetch(`http://127.0.0.1:${Config.safewalletPort}/shepherd/electrum/createrawtx?coin=${coin}&address=${sendToAddress}&value=${value}&change=${changeAddress}${btcFee ? '&btcfee=' + btcFee : ''}&gui=true&push=true&verify=true&token=${Config.token}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -255,7 +255,7 @@ export function shepherdElectrumSendPromise(coin, value, sendToAddress, changeAd
   value = Math.floor(value);
 
   return new Promise((resolve, reject) => {
-    return fetch(`http://127.0.0.1:${Config.agamaPort}/shepherd/electrum/createrawtx?coin=${coin}&address=${sendToAddress}&value=${value}&change=${changeAddress}${btcFee ? '&btcfee=' + btcFee : ''}&gui=true&push=true&verify=true&token=${Config.token}`, {
+    return fetch(`http://127.0.0.1:${Config.safewalletPort}/shepherd/electrum/createrawtx?coin=${coin}&address=${sendToAddress}&value=${value}&change=${changeAddress}${btcFee ? '&btcfee=' + btcFee : ''}&gui=true&push=true&verify=true&token=${Config.token}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -282,7 +282,7 @@ export function shepherdElectrumSendPreflight(coin, value, sendToAddress, change
   value = Math.floor(value);
 
   return new Promise((resolve, reject) => {
-    fetch(`http://127.0.0.1:${Config.agamaPort}/shepherd/electrum/createrawtx?coin=${coin}&address=${sendToAddress}&value=${value}&change=${changeAddress}${btcFee ? '&btcfee=' + btcFee : ''}&gui=true&push=false&verify=true&token=${Config.token}`, {
+    fetch(`http://127.0.0.1:${Config.safewalletPort}/shepherd/electrum/createrawtx?coin=${coin}&address=${sendToAddress}&value=${value}&change=${changeAddress}${btcFee ? '&btcfee=' + btcFee : ''}&gui=true&push=false&verify=true&token=${Config.token}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -307,7 +307,7 @@ export function shepherdElectrumSendPreflight(coin, value, sendToAddress, change
 
 export function shepherdElectrumListunspent(coin, address) {
   return new Promise((resolve, reject) => {
-    fetch(`http://127.0.0.1:${Config.agamaPort}/shepherd/electrum/listunspent?coin=${coin}&address=${address}&full=true&token=${Config.token}`, {
+    fetch(`http://127.0.0.1:${Config.safewalletPort}/shepherd/electrum/listunspent?coin=${coin}&address=${address}&full=true&token=${Config.token}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -332,7 +332,7 @@ export function shepherdElectrumListunspent(coin, address) {
 
 export function shepherdElectrumBip39Keys(seed, match, addressdepth, accounts) {
   return new Promise((resolve, reject) => {
-    fetch(`http://127.0.0.1:${Config.agamaPort}/shepherd/electrum/seed/bip39/match`, {
+    fetch(`http://127.0.0.1:${Config.safewalletPort}/shepherd/electrum/seed/bip39/match`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -367,7 +367,7 @@ export function shepherdElectrumSplitUtxoPromise(payload) {
   console.warn(payload);
 
   return new Promise((resolve, reject) => {
-    return fetch(`http://127.0.0.1:${Config.agamaPort}/shepherd/electrum/createrawtx-split`, {
+    return fetch(`http://127.0.0.1:${Config.safewalletPort}/shepherd/electrum/createrawtx-split`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

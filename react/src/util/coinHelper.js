@@ -162,12 +162,12 @@ export function getCoinTitle(coin) {
       coinlogo = 'mnz';
       coinname = 'Monaize';
       break;
-    case 'KMD':
+    case 'SAFE':
       hideTitle = true;
       titleBG = true;
       transparentBG = true;
-      coinlogo = 'kmd';
-      coinname = 'Komodo';
+      coinlogo = 'safe';
+      coinname = 'Safecoin';
       break;
     case 'BTM':
       coinlogo = 'bitmark';
@@ -510,7 +510,7 @@ export function getModeInfo(mode) {
 
 export function coindList() {
   const _coins = [
-    'KMD',
+    'SAFE',
     'CHIPS',
     'BET',
     'BOTS',
@@ -538,7 +538,7 @@ export function coindList() {
   return _coins;
 }
 
-export const isKomodoCoin = (coin) => {
+export const isSafecoinCoin = (coin) => {
   if (coin === 'SUPERNET' ||
       coin === 'REVS' ||
       coin === 'PANGEA' ||
@@ -558,7 +558,7 @@ export const isKomodoCoin = (coin) => {
       coin === 'WLC' ||
       coin === 'MNZ' ||
       coin === 'CHIPS' ||
-      coin === 'KMD' ||
+      coin === 'SAFE' ||
       coin === 'AXO' ||
       coin === 'ETOMIC' ||
       coin === 'BTCH') {

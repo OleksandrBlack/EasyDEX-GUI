@@ -8,7 +8,7 @@ import Config from '../../config';
 export function getDexCoins() {
   return dispatch => {
     return fetch(
-      `http://127.0.0.1:${Config.agamaPort}/shepherd/InstantDEX/allcoins?token=${Config.token}`, {
+      `http://127.0.0.1:${Config.safewalletPort}/shepherd/InstantDEX/allcoins?token=${Config.token}`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',

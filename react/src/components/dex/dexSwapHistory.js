@@ -20,7 +20,7 @@ class DexSwapHistory extends React.Component {
           <div className="orders-item-wrapper">
             <div className="orders-item-details">
               <div className="orders-item-details-coins">
-                <section className="orders-item-details-coin KMD">
+                <section className="orders-item-details-coin SAFE">
                   <span className="orders-item-details-coin-amount">
                     0.00397501
                   </span>
@@ -79,7 +79,7 @@ class DexSwapHistory extends React.Component {
             <div className="orders-item-wrapper">
               <div className="orders-item-details">
                 <div className="orders-item-details-coins">
-                  <section className="orders-item-details-coin KMD">
+                  <section className="orders-item-details-coin SAFE">
                     <span className="orders-item-details-coin-amount">
                       0.00397501
                     </span>

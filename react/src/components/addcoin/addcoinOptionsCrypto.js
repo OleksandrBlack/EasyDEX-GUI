@@ -3,12 +3,12 @@ import mainWindow from '../../util/mainWindow';
 import config from '../../config';
 
 const addCoinOptionsCrypto = () => {
-  const availableKMDModes = mainWindow.arch === 'x64' ? 'spv|native' : 'spv';
+  const availableSAFEModes = mainWindow.arch === 'x64' ? 'spv|native' : 'spv';
 
   let _coins = [{
-    label: 'Komodo (KMD)',
-    icon: 'KMD',
-    value: `KMD|${availableKMDModes}`,
+    label: 'Safecoin (SAFE)',
+    icon: 'SAFE',
+    value: `SAFE|${availableSAFEModes}`,
   }, {
     label: 'Chips (CHIPS)',
     icon: 'CHIPS',

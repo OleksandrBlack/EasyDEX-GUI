@@ -47,7 +47,7 @@ export const _ClaimInterestTableRender = function() {
     <span>
       <div>
         <p>
-          <strong>{ translate('CLAIM_INTEREST.REQ_P1') }:</strong> { translate('CLAIM_INTEREST.REQ_P2') } <strong>10 KMD</strong>
+          <strong>{ translate('CLAIM_INTEREST.REQ_P1') }:</strong> { translate('CLAIM_INTEREST.REQ_P2') } <strong>10 SAFE</strong>
         </p>
         <p>
           <strong>{ translate('CLAIM_INTEREST.TIP') }:</strong> { translate('CLAIM_INTEREST.TIP_DESC') }
@@ -59,7 +59,7 @@ export const _ClaimInterestTableRender = function() {
           </p>
         }
         <p>
-          <strong>Claim interest fee:</strong> 0.0001 KMD (10000 sats).
+          <strong>Claim interest fee:</strong> 0.0001 SAFE (10000 sats).
         </p>
       </div>
       { this.state.totalInterest > 0 &&
@@ -91,7 +91,7 @@ export const _ClaimInterestTableRender = function() {
                 <i className="icon fa-dollar margin-right-5"></i>
               }
               { !this.state.spvPreflightSendInProgress &&
-                <span>{ translate('CLAIM_INTEREST.CLAIM_INTEREST', `${this.state.totalInterest} KMD `) }</span>
+                <span>{ translate('CLAIM_INTEREST.CLAIM_INTEREST', `${this.state.totalInterest} SAFE `) }</span>
               }
               { this.state.spvPreflightSendInProgress &&
                 <span>{ translate('SEND.SPV_VERIFYING') }...</span>

@@ -6,7 +6,7 @@ import { secondsToString } from '../../../util/time';
 import {
   triggerToaster,
   sendNativeTx,
-  getKMDOPID,
+  getSAFEOPID,
   clearLastSendToResponseState,
   shepherdElectrumSend,
   shepherdElectrumSendPreflight,
@@ -202,13 +202,13 @@ class SendCoin extends React.Component {
       });
     }
 
-    document.getElementById('kmdWalletSendTo').focus();
+    document.getElementById('safeWalletSendTo').focus();
   }
 
   handleClickOutside(e) {
     if (e.srcElement.className !== 'btn dropdown-toggle btn-info' &&
         (e.srcElement.offsetParent && e.srcElement.offsetParent.className !== 'btn dropdown-toggle btn-info') &&
-        (e.path && e.path[4] && e.path[4].className.indexOf('showkmdwalletaddrs') === -1)) {
+        (e.path && e.path[4] && e.path[4].className.indexOf('showsafewalletaddrs') === -1)) {
       this.setState({
         addressSelectorOpen: false,
       });
@@ -345,7 +345,7 @@ class SendCoin extends React.Component {
     return (
       <span className={ `label label-${_satatusDef[opid.status].icon}` }>
         <i className="icon fa-eye"></i>&nbsp;
-        <span>{ translate(`KMD_NATIVE.${_satatusDef[opid.status].label}`) }</span>
+        <span>{ translate(`SAFE_NATIVE.${_satatusDef[opid.status].label}`) }</span>
       </span>
     );
   }
@@ -369,16 +369,16 @@ class SendCoin extends React.Component {
         <span>
           <strong>{ translate('SEND.ERROR_CODE') }:</strong> <span>{ opid.error.code }</span>
           <br />
-          <strong>{ translate('KMD_NATIVE.MESSAGE') }:</strong> <span>{ opid.error.message }</span>
+          <strong>{ translate('SAFE_NATIVE.MESSAGE') }:</strong> <span>{ opid.error.message }</span>
         </span>
       );
     } else if (opid.status === 'success') {
       isWaitingStatus = false;
       return (
         <span>
-          <strong>{ translate('KMD_NATIVE.TXID') }:</strong> <span>{ opid.result.txid }</span>
+          <strong>{ translate('SAFE_NATIVE.TXID') }:</strong> <span>{ opid.result.txid }</span>
           <br />
-          <strong>{ translate('KMD_NATIVE.EXECUTION_SECONDS') }:</strong> <span>{ opid.execution_secs }</span>
+          <strong>{ translate('SAFE_NATIVE.EXECUTION_SECONDS') }:</strong> <span>{ opid.execution_secs }</span>
         </span>
       );
     }
@@ -527,7 +527,7 @@ class SendCoin extends React.Component {
       if (this.state.addressType === 'private') {
         setTimeout(() => {
           Store.dispatch(
-            getKMDOPID(
+            getSAFEOPID(
               null,
               this.props.ActiveCoin.coin
             )

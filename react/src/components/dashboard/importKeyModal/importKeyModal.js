@@ -17,7 +17,7 @@ import {
 
 const SEED_TRIM_TIMEOUT = 5000;
 
-// import gen komodo keys utils
+// import gen safecoin keys utils
 import '../../../util/crypto/gen/array.map.js';
 import '../../../util/crypto/gen/cryptojs.js';
 import '../../../util/crypto/gen/cryptojs.sha256.js';
@@ -149,10 +149,10 @@ class ImportKeyModal extends React.Component {
       setTimeout(() => {
         if (_rescanInProgress) {
           setTimeout(() => {
-            if (this.props.ActiveCoin.coin === 'KMD') {
-              Store.dispatch(getDebugLog('komodo', 100));
+            if (this.props.ActiveCoin.coin === 'SAFE') {
+              Store.dispatch(getDebugLog('safecoin', 100));
             } else {
-              Store.dispatch(getDebugLog('komodo', 100, this.props.ActiveCoin.coin));
+              Store.dispatch(getDebugLog('safecoin', 100, this.props.ActiveCoin.coin));
             }
           }, 2000);
 
@@ -229,11 +229,11 @@ class ImportKeyModal extends React.Component {
       bytes[31] &= 127;
       bytes[31] |= 64;
       const btcKey = new Bitcoin.ECKey(bytes).setCompressed(true);
-      const kmdAddress = btcKey.getBitcoinAddress();
+      const safeAddress = btcKey.getBitcoinAddress();
       const wifAddress = btcKey.getBitcoinWalletImportFormat();
 
       return {
-        address: kmdAddress,
+        address: safeAddress,
         wif: wifAddress,
       };
     } else {

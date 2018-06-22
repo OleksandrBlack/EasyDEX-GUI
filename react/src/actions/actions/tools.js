@@ -5,7 +5,7 @@ import Store from '../../store';
 
 export function shepherdToolsSeedKeys(seed) {
   return new Promise((resolve, reject) => {
-    fetch(`http://127.0.0.1:${Config.agamaPort}/shepherd/electrum/keys`, {
+    fetch(`http://127.0.0.1:${Config.safewalletPort}/shepherd/electrum/keys`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -36,7 +36,7 @@ export function shepherdToolsSeedKeys(seed) {
 
 export function shepherdToolsBalance(coin, address) {
   return new Promise((resolve, reject) => {
-    fetch(`http://127.0.0.1:${Config.agamaPort}/shepherd/electrum/getbalance?coin=${coin}&address=${address}&token=${Config.token}`, {
+    fetch(`http://127.0.0.1:${Config.safewalletPort}/shepherd/electrum/getbalance?coin=${coin}&address=${address}&token=${Config.token}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -61,7 +61,7 @@ export function shepherdToolsBalance(coin, address) {
 
 export function shepherdToolsTransactions(coin, address) {
   return new Promise((resolve, reject) => {
-    fetch(`http://127.0.0.1:${Config.agamaPort}/shepherd/electrum/listtransactions?coin=${coin}&address=${address}&full=true&maxlength=20&token=${Config.token}`, {
+    fetch(`http://127.0.0.1:${Config.safewalletPort}/shepherd/electrum/listtransactions?coin=${coin}&address=${address}&full=true&maxlength=20&token=${Config.token}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -88,7 +88,7 @@ export function shepherdToolsBuildUnsigned(coin, value, sendToAddress, changeAdd
   value = Math.floor(value);
 
   return new Promise((resolve, reject) => {
-    return fetch(`http://127.0.0.1:${Config.agamaPort}/shepherd/electrum/createrawtx?coin=${coin}&address=${sendToAddress}&value=${value}&change=${changeAddress}&verify=false&push=false&offline=true&token=${Config.token}`, {
+    return fetch(`http://127.0.0.1:${Config.safewalletPort}/shepherd/electrum/createrawtx?coin=${coin}&address=${sendToAddress}&value=${value}&change=${changeAddress}&verify=false&push=false&offline=true&token=${Config.token}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -113,7 +113,7 @@ export function shepherdToolsBuildUnsigned(coin, value, sendToAddress, changeAdd
 
 export function shepherdToolsListunspent(coin, address) {
   return new Promise((resolve, reject) => {
-    fetch(`http://127.0.0.1:${Config.agamaPort}/shepherd/electrum/listunspent?coin=${coin}&address=${address}&full=true&token=${Config.token}`, {
+    fetch(`http://127.0.0.1:${Config.safewalletPort}/shepherd/electrum/listunspent?coin=${coin}&address=${address}&full=true&token=${Config.token}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -138,7 +138,7 @@ export function shepherdToolsListunspent(coin, address) {
 
 export function shepherdToolsPushTx(network, rawtx) {
   return new Promise((resolve, reject) => {
-    fetch(`http://127.0.0.1:${Config.agamaPort}/shepherd/electrum/pushtx`, {
+    fetch(`http://127.0.0.1:${Config.safewalletPort}/shepherd/electrum/pushtx`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -168,7 +168,7 @@ export function shepherdToolsPushTx(network, rawtx) {
 
 export function shepherdToolsWifToKP(coin, wif) {
   return new Promise((resolve, reject) => {
-    fetch(`http://127.0.0.1:${Config.agamaPort}/shepherd/electrum/wiftopub?coin=${coin}&wif=${wif}&token=${Config.token}`, {
+    fetch(`http://127.0.0.1:${Config.safewalletPort}/shepherd/electrum/wiftopub?coin=${coin}&wif=${wif}&token=${Config.token}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -193,7 +193,7 @@ export function shepherdToolsWifToKP(coin, wif) {
 
 export function shepherdToolsSeedToWif(seed, network, iguana) {
   return new Promise((resolve, reject) => {
-    fetch(`http://127.0.0.1:${Config.agamaPort}/shepherd/electrum/seedtowif`, {
+    fetch(`http://127.0.0.1:${Config.safewalletPort}/shepherd/electrum/seedtowif`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

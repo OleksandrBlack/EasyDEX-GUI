@@ -1,6 +1,6 @@
 import {
   triggerToaster,
-  getNewKMDAddresses,
+  getNewSAFEAddresses,
 } from '../actionCreators';
 import Config from '../../config';
 import Store from '../../store';
@@ -24,14 +24,14 @@ function getNewAddress(coin) {
     };
 
     fetch(
-      `http://127.0.0.1:${Config.agamaPort}/shepherd/cli`,
+      `http://127.0.0.1:${Config.safewalletPort}/shepherd/cli`,
       _fetchConfig
     )
     .catch((error) => {
       console.log(error);
       Store.dispatch(
         triggerToaster(
-          'genJumblrAddress + getKMDAddressesNative',
+          'genJumblrAddress + getSAFEAddressesNative',
           'Error',
           'error'
         )
@@ -64,7 +64,7 @@ export function setJumblrAddress(coin, type, address) {
     };
 
     fetch(
-      `http://127.0.0.1:${Config.agamaPort}/shepherd/cli`,
+      `http://127.0.0.1:${Config.safewalletPort}/shepherd/cli`,
       _fetchConfig
     )
     .catch((error) => {
@@ -104,7 +104,7 @@ export function pauseJumblr(coin) {
     };
 
     fetch(
-      `http://127.0.0.1:${Config.agamaPort}/shepherd/cli`,
+      `http://127.0.0.1:${Config.safewalletPort}/shepherd/cli`,
       _fetchConfig
     )
     .catch((error) => {
@@ -144,7 +144,7 @@ export function resumeJumblr(coin) {
     };
 
     fetch(
-      `http://127.0.0.1:${Config.agamaPort}/shepherd/cli`,
+      `http://127.0.0.1:${Config.safewalletPort}/shepherd/cli`,
       _fetchConfig
     )
     .catch((error) => {
@@ -184,7 +184,7 @@ function dumpPrivkey(coin, key) {
     };
 
     fetch(
-      `http://127.0.0.1:${Config.agamaPort}/shepherd/cli`,
+      `http://127.0.0.1:${Config.safewalletPort}/shepherd/cli`,
       _fetchConfig
     )
     .catch((error) => {
@@ -228,7 +228,7 @@ export function importPrivkey(coin, key, rescan = false) {
     };
 
     fetch(
-      `http://127.0.0.1:${Config.agamaPort}/shepherd/cli`,
+      `http://127.0.0.1:${Config.safewalletPort}/shepherd/cli`,
       _fetchConfig
     )
     .catch((error) => {

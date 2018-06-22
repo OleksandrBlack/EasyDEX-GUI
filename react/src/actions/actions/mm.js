@@ -43,7 +43,7 @@ export function shepherdMMResetState() {
 
 export function shepherdMMStart(passphrase) {
   return new Promise((resolve, reject) => {
-    fetch(`http://127.0.0.1:${Config.agamaPort}/shepherd/mm/start?passphrase=${passphrase}`, {
+    fetch(`http://127.0.0.1:${Config.safewalletPort}/shepherd/mm/start?passphrase=${passphrase}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -68,7 +68,7 @@ export function shepherdMMStart(passphrase) {
 
 export function shepherdMMStop() {
   return new Promise((resolve, reject) => {
-    fetch(`http://127.0.0.1:${Config.agamaPort}/shepherd/mm/stop`, {
+    fetch(`http://127.0.0.1:${Config.safewalletPort}/shepherd/mm/stop`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -94,7 +94,7 @@ export function shepherdMMStop() {
 export function shepherdMMRequest(payload) {
   return dispatch => {
     return fetch(
-      `http://127.0.0.1:${Config.agamaPort}/shepherd/mm/request`, {
+      `http://127.0.0.1:${Config.safewalletPort}/shepherd/mm/request`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

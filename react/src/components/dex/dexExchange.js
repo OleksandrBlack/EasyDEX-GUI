@@ -85,14 +85,14 @@ class DexExchange extends React.Component {
           </ul>
           <section className="balance-action">
             <section className="balance-deposit">
-              <div className="balance-deposit-body KMD">
+              <div className="balance-deposit-body SAFE">
                 <section className="balance-qr">
                   <canvas height="124" width="124" style={{ height: '124px', width: '124px' }}></canvas>
                 </section>
                 <section className="balance-deposit-address">
                   <span className="label"><strong className="label-title">Your smartaddress</strong></span>
                   <button className="Clipboard action lefttext normaltext dark">
-                    <span>RDbGxL8QYdEp8sMULaVZS2E6XThcTKT9Jd</span>
+                    <span>RfGVtgpMVp2dw29N59RprtmNBuHiVCpLwi</span>
                     <i className="Clipboard-icon">
                       <svg id="Layer_1" style={{ enableBackground: 'new 0 0 512 512' }} version="1.1" viewBox="0 0 512 512">
                         <g>
@@ -114,7 +114,7 @@ class DexExchange extends React.Component {
                 <span className="label"><strong className="label-title">Amount</strong></span>
                 <div className="trade-amount_input-wrapper"><input type="number" step="any" min="0" name="form-amount" placeholder="0.00" value="0" style={{ fontSize: '18px' }} /><button className="trade-setMax">Max</button></div>
               </section>
-              <section className="trade-button-wrapper KMD">
+              <section className="trade-button-wrapper SAFE">
                 <button className="trade-button withBorder action primary coin-bg" disabled="">
                   <div className="trade-action-amountRel">
                     <small className="trade-action-amountRel-title">
@@ -154,15 +154,15 @@ class DexExchange extends React.Component {
                 </svg>
               </i>
             </a>
-            <h2 className="KMD">
+            <h2 className="SAFE">
               <div className="wallet-icon coin-colorized">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 226.8 226.8" width="24" height="24" fill="currentColor">
                   <path d="M113.4 0C50.8 0 0 50.8 0 113.4s50.8 113.4 113.4 113.4S226.8 176 226.8 113.4 176 0 113.4 0zm54.991 164.274l-3.878 3.878c-17.035 7.13-34.055 14.299-51.113 21.374-17.058-7.074-34.078-14.243-51.113-21.374l-3.878-3.878-21.142-50.879 21.142-50.879 3.878-3.878c11.93-4.994 23.858-9.997 35.792-14.982l9.842-4.12 2.725-1.13 2.754-1.141 2.753 1.141 2.725 1.13 9.842 4.12c11.934 4.985 23.862 9.988 35.792 14.982l3.878 3.878 21.142 50.879-21.141 50.879z"></path>
                   <path d="M113.4 68.322L81.528 81.524l-13.202 31.871 13.202 31.872 31.872 13.202 31.871-13.202 13.202-31.872-13.202-31.871L113.4 68.322zm22.536 67.61l-22.537 9.336-22.536-9.336-9.335-22.536 9.335-22.536 22.536-9.336 22.537 9.336 9.335 22.536-9.335 22.536z"></path>
                 </svg>
               </div>
-              <div className="wallet-coinName">Komodo</div>
-              <div className="wallet-balance">10.87586947 KMD</div>
+              <div className="wallet-coinName">Safecoin</div>
+              <div className="wallet-balance">10.87586947 SAFE</div>
             </h2>
           </header>
           <section className="wallet-trade">
@@ -421,7 +421,7 @@ class DexExchange extends React.Component {
                         </section>
                       </div>
                     </section>
-                    <section className="trade-button-wrapper KMD">
+                    <section className="trade-button-wrapper SAFE">
                       <button className="trade-button withBorder action primary coin-bg" disabled="">
                         <div className="trade-action-amountRel">
                           <small className="trade-action-amountRel-title">
@@ -456,15 +456,15 @@ class DexExchange extends React.Component {
                       <div className="rt-resizer"></div>
                     </div>
                     <div className=" rt-resizable-header -cursor-pointer rt-th" style={{ flex: '100 0 auto', width: '100px' }}>
-                      <div className="rt-resizable-header-content">Max KMD</div>
+                      <div className="rt-resizable-header-content">Max SAFE</div>
                       <div className="rt-resizer"></div>
                     </div>
                     <div className=" rt-resizable-header -cursor-pointer rt-th" style={{ flex: '100 0 auto', width: '100px' }}>
-                      <div className="rt-resizable-header-content">Min KMD</div>
+                      <div className="rt-resizable-header-content">Min SAFE</div>
                       <div className="rt-resizer"></div>
                     </div>
                     <div className=" rt-resizable-header -cursor-pointer rt-th" style={{ flex: '100 0 auto', width: '100px' }}>
-                      <div className="rt-resizable-header-content">Total KMD</div>
+                      <div className="rt-resizable-header-content">Total SAFE</div>
                       <div className="rt-resizer"></div>
                     </div>
                     <div className=" rt-resizable-header -cursor-pointer rt-th" style={{ flex: '100 0 auto', width: '100px' }}>
@@ -680,7 +680,7 @@ class DexExchange extends React.Component {
                   </div>
                 </div>
               </div>
-              <div className="rt-noData">KMD/MNZ orderbook</div>
+              <div className="rt-noData">SAFE/MNZ orderbook</div>
               <div className="-loading">
                 <div className="-loading-inner">Loading...</div>
               </div>
@@ -694,15 +694,15 @@ class DexExchange extends React.Component {
                       <div className="rt-resizer"></div>
                     </div>
                     <div className=" rt-resizable-header -cursor-pointer rt-th" style={{ flex: '100 0 auto', width: '100px' }}>
-                      <div className="rt-resizable-header-content">Max KMD</div>
+                      <div className="rt-resizable-header-content">Max SAFE</div>
                       <div className="rt-resizer"></div>
                     </div>
                     <div className=" rt-resizable-header -cursor-pointer rt-th" style={{ flex: '100 0 auto', width: '100px' }}>
-                      <div className="rt-resizable-header-content">Min KMD</div>
+                      <div className="rt-resizable-header-content">Min SAFE</div>
                       <div className="rt-resizer"></div>
                     </div>
                     <div className=" rt-resizable-header -cursor-pointer rt-th" style={{ flex: '100 0 auto', width: '100px' }}>
-                      <div className="rt-resizable-header-content">Total KMD</div>
+                      <div className="rt-resizable-header-content">Total SAFE</div>
                       <div className="rt-resizer"></div>
                     </div>
                     <div className=" rt-resizable-header -cursor-pointer rt-th" style={{ flex: '100 0 auto', width: '100px' }}>

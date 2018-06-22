@@ -19,7 +19,7 @@ function getAppInfoState(json) {
 
 export function getAppInfo() {
   return dispatch => {
-    return fetch(`http://127.0.0.1:${Config.agamaPort}/shepherd/appinfo?token=${Config.token}`, {
+    return fetch(`http://127.0.0.1:${Config.safewalletPort}/shepherd/appinfo?token=${Config.token}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -107,7 +107,7 @@ export function getDebugLog(target, linesCount, acName) {
   }
 
   return dispatch => {
-    return fetch(`http://127.0.0.1:${Config.agamaPort}/shepherd/debuglog`, {
+    return fetch(`http://127.0.0.1:${Config.safewalletPort}/shepherd/debuglog`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -131,7 +131,7 @@ export function getDebugLog(target, linesCount, acName) {
 
 export function saveAppConfig(_payload) {
   return dispatch => {
-    return fetch(`http://127.0.0.1:${Config.agamaPort}/shepherd/appconf`, {
+    return fetch(`http://127.0.0.1:${Config.safewalletPort}/shepherd/appconf`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -174,7 +174,7 @@ function getAppConfigState(json) {
 
 export function getAppConfig() {
   return dispatch => {
-    return fetch(`http://127.0.0.1:${Config.agamaPort}/shepherd/appconf?token=${Config.token}`, {
+    return fetch(`http://127.0.0.1:${Config.safewalletPort}/shepherd/appconf?token=${Config.token}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -197,7 +197,7 @@ export function getAppConfig() {
 
 export function resetAppConfig() {
   return dispatch => {
-    return fetch(`http://127.0.0.1:${Config.agamaPort}/shepherd/appconf/reset`, {
+    return fetch(`http://127.0.0.1:${Config.safewalletPort}/shepherd/appconf/reset`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -229,10 +229,10 @@ export function resetAppConfig() {
 }
 
 export function coindGetStdout(chain) {
-  const _chain = chain === 'KMD' ? 'komodod' : chain;
+  const _chain = chain === 'SAFE' ? 'safecoind' : chain;
 
   return new Promise((resolve, reject) => {
-    fetch(`http://127.0.0.1:${Config.agamaPort}/shepherd/coind/stdout?chain=${chain}&token=${Config.token}`, {
+    fetch(`http://127.0.0.1:${Config.safewalletPort}/shepherd/coind/stdout?chain=${chain}&token=${Config.token}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -256,10 +256,10 @@ export function coindGetStdout(chain) {
 }
 
 export function getWalletDatKeys(chain, keyMatchPattern) {
-  const _chain = chain === 'KMD' ? null : chain;
+  const _chain = chain === 'SAFE' ? null : chain;
 
   return new Promise((resolve, reject) => {
-    fetch(keyMatchPattern ? `http://127.0.0.1:${Config.agamaPort}/shepherd/coindwalletkeys?chain=${_chain}&search=${keyMatchPattern}&token=${Config.token}` : `http://127.0.0.1:${Config.agamaPort}/shepherd/coindwalletkeys?chain=${_chain}&token=${Config.token}`, {
+    fetch(keyMatchPattern ? `http://127.0.0.1:${Config.safewalletPort}/shepherd/coindwalletkeys?chain=${_chain}&search=${keyMatchPattern}&token=${Config.token}` : `http://127.0.0.1:${Config.safewalletPort}/shepherd/coindwalletkeys?chain=${_chain}&token=${Config.token}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -302,7 +302,7 @@ export function dumpPrivKey(coin, address, isZaddr) {
     };
 
     fetch(
-      `http://127.0.0.1:${Config.agamaPort}/shepherd/cli`,
+      `http://127.0.0.1:${Config.safewalletPort}/shepherd/cli`,
       _fetchConfig
     )
     .catch(function(error) {
@@ -342,7 +342,7 @@ export function validateAddress(coin, address, isZaddr) {
     };
 
     fetch(
-      `http://127.0.0.1:${Config.agamaPort}/shepherd/cli`,
+      `http://127.0.0.1:${Config.safewalletPort}/shepherd/cli`,
       _fetchConfig
     )
     .catch(function(error) {

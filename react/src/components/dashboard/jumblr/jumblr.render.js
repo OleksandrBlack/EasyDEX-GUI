@@ -192,7 +192,7 @@ export const JumblrRender = function() {
                       <li>{ translate('JUMBLR.LARGE_LOT') }</li>
                     </ul>
                     <p>{ this.renderLB('JUMBLR.EG') }</p>
-                    <p>{ translate('JUMBLR.93_KMD') }</p>
+                    <p>{ translate('JUMBLR.93_SAFE') }</p>
                     <p>{ translate('JUMBLR.TO_CLEAR_THEM') }</p>
                     <p>{ translate('JUMBLR.WHEN_IT_TOTALS') }</p>
                   </div>

@@ -21,7 +21,7 @@ export function getListUnspent(coin) {
     };
 
     fetch(
-      `http://127.0.0.1:${Config.agamaPort}/shepherd/cli`,
+      `http://127.0.0.1:${Config.safewalletPort}/shepherd/cli`,
       _fetchConfig
     )
     .catch((error) => {
@@ -78,7 +78,7 @@ export function getRawTransaction(coin, txid) {
     };
 
     fetch(
-      `http://127.0.0.1:${Config.agamaPort}/shepherd/cli`,
+      `http://127.0.0.1:${Config.safewalletPort}/shepherd/cli`,
       _fetchConfig
     )
     .catch((error) => {

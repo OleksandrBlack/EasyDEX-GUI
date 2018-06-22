@@ -9,7 +9,7 @@ const WalletsTxInfoRender = function(txInfo) {
     <div onKeyDown={ (event) => this.handleKeydown(event) }>
       <div
         className="modal show"
-        id="kmd_txid_info_mdl">
+        id="safe_txid_info_mdl">
         <div
           onClick={ this.toggleTxInfoModal }
           className="modal-close-overlay"></div>

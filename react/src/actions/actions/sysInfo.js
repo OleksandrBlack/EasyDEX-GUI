@@ -3,7 +3,7 @@ import Config from '../../config';
 
 export function shepherdGetSysInfo() {
   return dispatch => {
-    return fetch(`http://127.0.0.1:${Config.agamaPort}/shepherd/sysinfo?token=${Config.token}`, {
+    return fetch(`http://127.0.0.1:${Config.safewalletPort}/shepherd/sysinfo?token=${Config.token}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',

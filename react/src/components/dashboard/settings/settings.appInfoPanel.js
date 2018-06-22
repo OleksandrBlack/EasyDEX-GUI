@@ -20,7 +20,7 @@ class AppInfoPanel extends React.Component {
       for (let key in _ports) {
         _items.push(
           <span key={ `settings-coind-ports-${key}` }>
-            { key === 'komodod' ? 'KMD' : key }: { _ports[key] }<br />
+            { key === 'safecoind' ? 'SAFE' : key }: { _ports[key] }<br />
           </span>
         );
       }
@@ -59,11 +59,11 @@ class AppInfoPanel extends React.Component {
                 <br />
                 { translate('SETTINGS.CONFIG') }: { this.props.Settings.appInfo.dirs.configLocation }
                 <br />
-                Komodo { translate('SETTINGS.BIN') }: { this.props.Settings.appInfo.dirs.komododBin }
+                Safecoin { translate('SETTINGS.BIN') }: { this.props.Settings.appInfo.dirs.safecoindBin }
                 <br />
-                Komodo { translate('SETTINGS.DIR') }: { this.props.Settings.appInfo.dirs.komodoDir }
+                Safecoin { translate('SETTINGS.DIR') }: { this.props.Settings.appInfo.dirs.safecoinDir }
                 <br />
-                Komodo wallet.dat: { this.props.Settings.appInfo.dirs.komodoDir }
+                Safecoin wallet.dat: { this.props.Settings.appInfo.dirs.safecoinDir }
               </p>
             }
             { mainWindow.arch === 'x64' &&

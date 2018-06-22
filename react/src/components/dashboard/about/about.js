@@ -29,8 +29,8 @@ class About extends React.Component {
     return (
       <div className="page margin-left-0">
         <div className="page-content">
-          <h2>{ translate('ABOUT.ABOUT_AGAMA') }</h2>
-          <p>{ translate('ABOUT.AGAMA_MODES') }</p>
+          <h2>{ translate('ABOUT.ABOUT_SAFEWALLET') }</h2>
+          <p>{ translate('ABOUT.SAFEWALLET_MODES') }</p>
           <ul>
             <li>
               <span className="font-weight-600">{ translate('INDEX.NATIVE_MODE') }</span>:&nbsp;
@@ -43,18 +43,18 @@ class About extends React.Component {
           </ul>
           <br />
 
-          <span className="font-weight-600">{ translate('ABOUT.AGAMA_NOTE') }</span>
+          <span className="font-weight-600">{ translate('ABOUT.SAFEWALLET_NOTE') }</span>
 
           <br /><br />
 
           <div className="font-weight-600">{ translate('ABOUT.TESTERS') }</div>
-          { translate('ABOUT.TESTERS_P1') } <a className="link" onClick={ () => this.openExternalWindow('https://supernet.org/en/products/agama-wallet') }>{ translate('ABOUT.TESTERS_P2') }</a>.
-          { translate('ABOUT.TESTERS_P3') } <a className="link" onClick={ () => this.openExternalWindow('https://sprnt.slack.com/messages/C0HT9MH96/') }>#testing-agama</a> Slack { translate('ABOUT.CHANNEL') }. <a className="link" onClick={ () => this.openExternalWindow('http://slackinvite.supernet.org/') }>{ translate('ABOUT.GET_AN_INVITE') }</a> { translate('ABOUT.GET_AN_INVITE_P2') }.
+          { translate('ABOUT.TESTERS_P1') } <a className="link" onClick={ () => this.openExternalWindow('https://safecoin.org/wallets/') }>{ translate('ABOUT.TESTERS_P2') }</a>.
+          { translate('ABOUT.TESTERS_P3') } <a className="link" onClick={ () => this.openExternalWindow('https://discord.gg/wvteEF3') }>#wallet-pre-release</a> Discord { translate('ABOUT.CHANNEL') }. <a className="link" onClick={ () => this.openExternalWindow('https://discord.gg/wvteEF3') }>{ translate('ABOUT.GET_AN_INVITE') }</a> { translate('ABOUT.GET_AN_INVITE_P2') }.
           { translate('ABOUT.TESTERS_P4') }
 
           <br /><br />
 
-          { translate('ABOUT.AGAMA_DAPPS') }
+          { translate('ABOUT.SAFEWALLET_DAPPS') }
           <ul>
             <li>
               <span className="font-weight-600">Jumblr</span>: { translate('ABOUT.JUMBLR_DESC') }

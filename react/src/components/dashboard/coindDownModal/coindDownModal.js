@@ -18,7 +18,7 @@ class CoindDownModal extends React.Component {
     super();
     this.state = {
       display: false,
-      kmdMainPassiveMode: false,
+      safeMainPassiveMode: false,
       coindStdOut: translate('INDEX.LOADING') + '...',
       toggleDebugLog: true,
     };
@@ -32,10 +32,10 @@ class CoindDownModal extends React.Component {
     const _coin = this.props.ActiveCoin.coin;
 
     if (!this.state.toggleDebugLog) {
-      if (_coin === 'KMD') {
-        Store.dispatch(getDebugLog('komodo', 50));
+      if (_coin === 'SAFE') {
+        Store.dispatch(getDebugLog('safecoin', 50));
       } else {
-        Store.dispatch(getDebugLog('komodo', 50, _coin));
+        Store.dispatch(getDebugLog('safecoin', 50, _coin));
       }
     } else {
       this.getCoindGetStdout();
@@ -63,7 +63,7 @@ class CoindDownModal extends React.Component {
 
   componentWillMount() {
     this.setState(Object.assign({}, this.state, {
-      kmdMainPassiveMode: mainWindow.kmdMainPassiveMode,
+      safeMainPassiveMode: mainWindow.safeMainPassiveMode,
     }));
   }
 
@@ -81,7 +81,7 @@ class CoindDownModal extends React.Component {
 
   render() {
     if (this.state.display &&
-        !this.state.kmdMainPassiveMode &&
+        !this.state.safeMainPassiveMode &&
         this.props.ActiveCoin.getinfoFetchFailures >= COIND_DOWN_MODAL_FETCH_FAILURES_THRESHOLD) {
       return CoindDownModalRender.call(this);
     }

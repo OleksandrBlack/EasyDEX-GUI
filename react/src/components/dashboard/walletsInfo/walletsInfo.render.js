@@ -177,7 +177,7 @@ const WalletsInfoRender = function() {
               </table>
             </div>
           </div>
-          { this.props.ActiveCoin.coin === 'KMD' &&
+          { this.props.ActiveCoin.coin === 'SAFE' &&
             this.displayClaimInterestUI() &&
             <div>
               <button
@@ -227,7 +227,7 @@ const WalletsInfoRender = function() {
           <div className="panel">
             <div className="panel-heading">
               <h3 className="panel-title">
-                { this.props.ActiveCoin.coin === 'KMD' ? 'Komodo' : `${this.props.ActiveCoin.coin}` }&nbsp;
+                { this.props.ActiveCoin.coin === 'SAFE' ? 'Safecoin' : `${this.props.ActiveCoin.coin}` }&nbsp;
                 { translate('INDEX.INFO') }
               </h3>
             </div>
@@ -237,7 +237,7 @@ const WalletsInfoRender = function() {
                   <tr>
                     <td>{ translate('INDEX.VERSION') }</td>
                     <td>
-                      { _progress.KMDversion }
+                      { _progress.SAFEversion }
                     </td>
                   </tr>
                   <tr>
@@ -397,7 +397,7 @@ const WalletsInfoRender = function() {
               </table>
             </div>
           </div>
-          { this.props.ActiveCoin.coin === 'KMD' &&
+          { this.props.ActiveCoin.coin === 'SAFE' &&
             this.props.ActiveCoin.mode !== 'spv' &&
             <div>
               <button

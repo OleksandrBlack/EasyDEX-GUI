@@ -5,7 +5,7 @@ import Store from '../../store';
 
 export function shepherdElectionsBalance(coin, address) {
   return new Promise((resolve, reject) => {
-    fetch(`http://127.0.0.1:${Config.agamaPort}/shepherd/electrum/getbalance?coin=${coin}&address=${address}&token=${Config.token}`, {
+    fetch(`http://127.0.0.1:${Config.safewalletPort}/shepherd/electrum/getbalance?coin=${coin}&address=${address}&token=${Config.token}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -30,7 +30,7 @@ export function shepherdElectionsBalance(coin, address) {
 
 export function shepherdElectionsTransactions(coin, address, type) {
   return new Promise((resolve, reject) => {
-    fetch(`http://127.0.0.1:${Config.agamaPort}/shepherd/elections/listtransactions?coin=${coin}&address=${address}&full=true&type=${type}&maxlength=20&token=${Config.token}`, {
+    fetch(`http://127.0.0.1:${Config.safewalletPort}/shepherd/elections/listtransactions?coin=${coin}&address=${address}&full=true&type=${type}&maxlength=20&token=${Config.token}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -55,7 +55,7 @@ export function shepherdElectionsTransactions(coin, address, type) {
 
 export function shepherdElectionsStatus() {
   return new Promise((resolve, reject) => {
-    return fetch(`http://127.0.0.1:${Config.agamaPort}/shepherd/elections/status`, {
+    return fetch(`http://127.0.0.1:${Config.safewalletPort}/shepherd/elections/status`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -83,7 +83,7 @@ export function shepherdElectionsStatus() {
 
 export function shepherdElectionsLogin(seed, network) {
   return new Promise((resolve, reject) => {
-    return fetch(`http://127.0.0.1:${Config.agamaPort}/shepherd/elections/login`, {
+    return fetch(`http://127.0.0.1:${Config.safewalletPort}/shepherd/elections/login`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -114,7 +114,7 @@ export function shepherdElectionsLogin(seed, network) {
 
 export function shepherdElectionsLogout() {
   return new Promise((resolve, reject) => {
-    return fetch(`http://127.0.0.1:${Config.agamaPort}/shepherd/elections/logout`, {
+    return fetch(`http://127.0.0.1:${Config.safewalletPort}/shepherd/elections/logout`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -144,7 +144,7 @@ export function shepherdElectionsSend(coin, value, sendToAddress, changeAddress,
   value = Math.floor(value);
 
   return new Promise((resolve, reject) => {
-    return fetch(`http://127.0.0.1:${Config.agamaPort}/shepherd/electrum/createrawtx?coin=${coin}&address=${sendToAddress}&value=${value}&change=${changeAddress}&vote=true&push=true&verify=false&opreturn=${opreturn}&token=${Config.token}`, {
+    return fetch(`http://127.0.0.1:${Config.safewalletPort}/shepherd/electrum/createrawtx?coin=${coin}&address=${sendToAddress}&value=${value}&change=${changeAddress}&vote=true&push=true&verify=false&opreturn=${opreturn}&token=${Config.token}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -169,7 +169,7 @@ export function shepherdElectionsSend(coin, value, sendToAddress, changeAddress,
 
 export function shepherdElectionsSendMany(coin, targets, change, opreturn) {
   return new Promise((resolve, reject) => {
-    return fetch(`http://127.0.0.1:${Config.agamaPort}/shepherd/electrum/createrawtx-multiout`, {
+    return fetch(`http://127.0.0.1:${Config.safewalletPort}/shepherd/electrum/createrawtx-multiout`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

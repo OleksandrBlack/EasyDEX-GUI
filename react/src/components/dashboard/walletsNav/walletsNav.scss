@@ -4,7 +4,7 @@
   top: -10px;
 }
 
-.header-easydex-section {
+.header-fairexchange-section {
   img {
     max-width: 60px;
   }
@@ -15,7 +15,7 @@
   position: relative;
   top: 0;
 
-  .header-easydex-section {
+  .header-fairexchange-section {
     img {
       width: inherit;
       max-width: inherit;
@@ -27,7 +27,7 @@
   &.native-coin-logo {
     top: -93px;
 
-    .header-easydex-section {
+    .header-fairexchange-section {
       img {
         width: inherit;
       }
@@ -41,7 +41,7 @@
   top: -105px;
   z-index: 100;
 
-  .header-easydex-section {
+  .header-fairexchange-section {
     img {
       width: 60px;
       max-height: 60px;

@@ -60,7 +60,7 @@ export function sendNativeTx(coin, _payload) {
     };
 
     fetch(
-      `http://127.0.0.1:${Config.agamaPort}/shepherd/cli`,
+      `http://127.0.0.1:${Config.safewalletPort}/shepherd/cli`,
       _fetchConfig
     )
     .catch((error) => {
@@ -128,7 +128,7 @@ export function sendNativeTx(coin, _payload) {
   }
 }
 
-export function getKMDOPIDState(json) {
+export function getSAFEOPIDState(json) {
   return {
     type: DASHBOARD_ACTIVE_COIN_NATIVE_OPIDS,
     opids: json,
@@ -136,7 +136,7 @@ export function getKMDOPIDState(json) {
 }
 
 // remove
-export function getKMDOPID(opid, coin) {
+export function getSAFEOPID(opid, coin) {
   return dispatch => {
     const payload = {
       mode: null,
@@ -155,14 +155,14 @@ export function getKMDOPID(opid, coin) {
     };
 
     fetch(
-      `http://127.0.0.1:${Config.agamaPort}/shepherd/cli`,
+      `http://127.0.0.1:${Config.safewalletPort}/shepherd/cli`,
       _fetchConfig
     )
     .catch((error) => {
       console.log(error);
       dispatch(
         triggerToaster(
-          'getKMDOPID',
+          'getSAFEOPID',
           'Error',
           'error'
         )
@@ -171,7 +171,7 @@ export function getKMDOPID(opid, coin) {
     .then(response => response.json())
     .then(json => {
       json = json.result;
-      dispatch(getKMDOPIDState(json));
+      dispatch(getSAFEOPIDState(json));
     });
   };
 }
@@ -187,8 +187,8 @@ export function sendToAddressPromise(coin, address, amount) {
       params: [
         address,
         amount,
-        'KMD interest claim request',
-        'KMD interest claim request',
+        'SAFE interest claim request',
+        'SAFE interest claim request',
         true
       ],
     };
@@ -202,7 +202,7 @@ export function sendToAddressPromise(coin, address, amount) {
     };
 
     fetch(
-      `http://127.0.0.1:${Config.agamaPort}/shepherd/cli`,
+      `http://127.0.0.1:${Config.safewalletPort}/shepherd/cli`,
       _fetchConfig
     )
     .catch((error) => {
@@ -256,7 +256,7 @@ export function validateAddressPromise(coin, address) {
     };
 
     fetch(
-      `http://127.0.0.1:${Config.agamaPort}/shepherd/cli`,
+      `http://127.0.0.1:${Config.safewalletPort}/shepherd/cli`,
       _fetchConfig
     )
     .catch((error) => {
