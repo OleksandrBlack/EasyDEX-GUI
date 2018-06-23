@@ -18,7 +18,6 @@
     "e2e-live": "protractor --elementExplorer"
   },
   "repository": "https://github.com/OleksandrBlack/FairExchange-GUI",
-  "repository": "https://github.com/SafecoinPlatform/FairExchange-GUI",
   "keywords": [
     "safewallet",
     "FairExchange",
