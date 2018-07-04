@@ -1,6 +1,45 @@
-# FairExchange-GUI
-FairExchange-GUI was forked and modified from EasyDEX-GUI (on May 1st 2018, https://github.com/KomodoPlatform/EasyDEX-GUI)
+EDEX ReactJS
+---
 
-FairExchange-GUI will utilize HTML files providing graphical user interface to Fair-Exchange, to be forked and modified from SuperNET/Iguana APIs (https://github.com/KomodoPlatform).
+Setup
+---
 
-FairExchange application is decentralized Exchange for crypto currencies. It's the easier and quicker version of the more advanced Decentralized Exchange Application InstantDEX. You can compare FairExchange with well known online exchange service like ShapeShift.io but all in decentral mannner, where all the funds are stored and managed locally; all crypto coin's private keys are in user's control and not any central exchange's control; it makes and completes the trades all in decentralized and secure ways to make sure users don't lose their crypto money; and it's super quick way to trade crypto currency over FairExchange.
+Node version 6 or 7 is required.
+
+```
+npm install
+```
+
+
+Usage
+---
+
+## Running in dev mode
+
+`npm start`
+
+Opens Application in browser [http://localhost:3000/]
+
+
+## Build (production)
+
+Build will be placed in the `build` folder.
+
+```
+ npm run build
+```
+
+## Running in preview production mode
+
+This command will start webpack dev server, but with `NODE_ENV` set to `production`.
+Everything will be minified and served.
+Hot reload will not work, so you need to refresh the page manually after changing the code.
+
+```
+npm run preview
+```
+
+## Linting
+
+```
+$ npm run lint
